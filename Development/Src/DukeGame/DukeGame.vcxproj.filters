@@ -129,6 +129,45 @@
     <None Include="Classes\DukeHud.uc">
       <Filter>Classes</Filter>
     </None>
+    <None Include="Classes\DukeWeapon.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\DukeInventoryManager.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\DukeInventory.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\..\..\DukeGame\Config\DukeEditor.ini">
+      <Filter>Ini</Filter>
+    </None>
+    <None Include="..\..\..\DukeGame\Config\DukeEditorKeyBindings.ini">
+      <Filter>Ini</Filter>
+    </None>
+    <None Include="..\..\..\DukeGame\Config\DukeEditorUserSettings.ini">
+      <Filter>Ini</Filter>
+    </None>
+    <None Include="..\..\..\DukeGame\Config\DukeEngine.ini">
+      <Filter>Ini</Filter>
+    </None>
+    <None Include="..\..\..\DukeGame\Config\DukeGame.ini">
+      <Filter>Ini</Filter>
+    </None>
+    <None Include="..\..\..\DukeGame\Config\DukeInput.ini">
+      <Filter>Ini</Filter>
+    </None>
+    <None Include="..\..\..\DukeGame\Config\DukeLightmass.ini">
+      <Filter>Ini</Filter>
+    </None>
+    <None Include="..\..\..\DukeGame\Config\DukeMaterialEditor_layoutAUI_INT.txt">
+      <Filter>Ini</Filter>
+    </None>
+    <None Include="..\..\..\DukeGame\Config\DukeSystemSettings.ini">
+      <Filter>Ini</Filter>
+    </None>
+    <None Include="..\..\..\DukeGame\Config\DukeUI.ini">
+      <Filter>Ini</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\NullSurveys.cpp">
@@ -141,6 +180,9 @@
       <Filter>Src</Filter>
     </ClCompile>
     <ClCompile Include="Src\DukeHud.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\DukeWeapon.cpp">
       <Filter>Src</Filter>
     </ClCompile>
   </ItemGroup>

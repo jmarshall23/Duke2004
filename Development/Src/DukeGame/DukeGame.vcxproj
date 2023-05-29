@@ -66,6 +66,16 @@
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="..\..\..\DukeGame\Config\DukeEditor.ini" />
+    <None Include="..\..\..\DukeGame\Config\DukeEditorKeyBindings.ini" />
+    <None Include="..\..\..\DukeGame\Config\DukeEditorUserSettings.ini" />
+    <None Include="..\..\..\DukeGame\Config\DukeEngine.ini" />
+    <None Include="..\..\..\DukeGame\Config\DukeGame.ini" />
+    <None Include="..\..\..\DukeGame\Config\DukeInput.ini" />
+    <None Include="..\..\..\DukeGame\Config\DukeLightmass.ini" />
+    <None Include="..\..\..\DukeGame\Config\DukeMaterialEditor_layoutAUI_INT.txt" />
+    <None Include="..\..\..\DukeGame\Config\DukeSystemSettings.ini" />
+    <None Include="..\..\..\DukeGame\Config\DukeUI.ini" />
     <None Include="..\..\..\ExampleGame\Config\Xbox360\Xbox360Editor.ini" />
     <None Include="..\..\..\ExampleGame\Config\Xbox360\Xbox360Engine.ini" />
     <None Include="..\..\..\ExampleGame\Config\Xbox360\Xbox360Game.ini" />
@@ -73,8 +83,11 @@
     <None Include="..\..\..\ExampleGame\Localization\Int\ExampleGame.int" />
     <None Include="Classes\DukeGameInfo.uc" />
     <None Include="Classes\DukeHud.uc" />
+    <None Include="Classes\DukeInventory.uc" />
+    <None Include="Classes\DukeInventoryManager.uc" />
     <None Include="Classes\DukePawn.uc" />
     <None Include="Classes\DukePlayerController.uc" />
+    <None Include="Classes\DukeWeapon.uc" />
     <None Include="Live\ExampleGame.PNG" />
     <None Include="Live\ExampleGame.spa" />
     <None Include="Live\ExampleGame.xlast" />
@@ -103,6 +116,7 @@
     <ClCompile Include="Src\DukeGame.cpp" />
     <ClCompile Include="Src\DukeHud.cpp" />
     <ClCompile Include="Src\DukePawn.cpp" />
+    <ClCompile Include="Src\DukeWeapon.cpp" />
     <ClCompile Include="Src\NullSurveys.cpp" />
   </ItemGroup>
   <ItemGroup>

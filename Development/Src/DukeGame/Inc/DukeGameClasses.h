@@ -117,8 +117,27 @@ public:
     //## BEGIN PROPS DukePawn
     //## END PROPS DukePawn
 
+    virtual void AddDefaultInventory();
+    DECLARE_FUNCTION(execAddDefaultInventory)
+    {
+        P_FINISH;
+        this->AddDefaultInventory();
+    }
     DECLARE_CLASS(ADukePawn,AGamePawn,0|CLASS_Config,DukeGame)
     NO_DEFAULT_CONSTRUCTOR(ADukePawn)
+};
+
+class ADukeWeapon : public AWeapon
+{
+public:
+    //## BEGIN PROPS DukeWeapon
+    INT AmmoCount;
+    INT MaxAmmoCount;
+    FLOAT InventoryWeight;
+    //## END PROPS DukeWeapon
+
+    DECLARE_CLASS(ADukeWeapon,AWeapon,0|CLASS_Config,DukeGame)
+    NO_DEFAULT_CONSTRUCTOR(ADukeWeapon)
 };
 
 #undef DECLARE_CLASS
@@ -131,6 +150,7 @@ public:
 AUTOGENERATE_FUNCTION(ADukeHUD,-1,execDrawScaledTexture);
 AUTOGENERATE_FUNCTION(ADukeHUD,-1,execRenderHud);
 AUTOGENERATE_FUNCTION(ADukeHUD,-1,execHudStartup);
+AUTOGENERATE_FUNCTION(ADukePawn,-1,execAddDefaultInventory);
 
 #ifndef NAMES_ONLY
 #undef AUTOGENERATE_FUNCTION
@@ -144,6 +164,8 @@ AUTOGENERATE_FUNCTION(ADukeHUD,-1,execHudStartup);
 	ADukeHUD::StaticClass(); \
 	GNativeLookupFuncs.Set(FName("DukeHUD"), GDukeGameADukeHUDNatives); \
 	ADukePawn::StaticClass(); \
+	GNativeLookupFuncs.Set(FName("DukePawn"), GDukeGameADukePawnNatives); \
+	ADukeWeapon::StaticClass(); \
 
 #endif // DUKEGAME_NATIVE_DEFS
 
@@ -156,6 +178,12 @@ FNativeFunctionLookup GDukeGameADukeHUDNatives[] =
 	{NULL, NULL}
 };
 
+FNativeFunctionLookup GDukeGameADukePawnNatives[] = 
+{ 
+	MAP_NATIVE(ADukePawn, execAddDefaultInventory)
+	{NULL, NULL}
+};
+
 #endif // NATIVES_ONLY
 #endif // STATIC_LINKING_MOJO
 
@@ -164,6 +192,9 @@ VERIFY_CLASS_OFFSET_NODIE(ADukeHUD,DukeHUD,Opacity)
 VERIFY_CLASS_OFFSET_NODIE(ADukeHUD,DukeHUD,NumberCircleTexture)
 VERIFY_CLASS_SIZE_NODIE(ADukeHUD)
 VERIFY_CLASS_SIZE_NODIE(ADukePawn)
+VERIFY_CLASS_OFFSET_NODIE(ADukeWeapon,DukeWeapon,AmmoCount)
+VERIFY_CLASS_OFFSET_NODIE(ADukeWeapon,DukeWeapon,InventoryWeight)
+VERIFY_CLASS_SIZE_NODIE(ADukeWeapon)
 #endif // VERIFY_CLASS_SIZES
 #endif // !ENUMS_ONLY
 

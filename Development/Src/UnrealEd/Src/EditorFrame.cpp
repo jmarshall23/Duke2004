@@ -1450,32 +1450,14 @@ void WxEditorFrame::Create()
  * Returns the localized caption for this frame window. It looks in the
  * editor's INI file to determine which localization file to use
  */
-FString WxEditorFrame::GetLocalizedCaption()
+FString WxEditorFrame::GetLocalizedCaption(FString levelName)
 {
-#if _WIN64
-	const FString PlatformBitsString( TEXT( "64" ) );
-#else
-	const FString PlatformBitsString( TEXT( "32" ) );
-#endif
-
-	FString RHIName = ShaderPlatformToText( GRHIShaderPlatform, TRUE, TRUE );
-
-#if UDK
-	const FString AppName = FString::Printf( LocalizeSecure( LocalizeUnrealEd( "UDKTitle_RHI_F" ), *PlatformBitsString, *RHIName ) );
-#else
-	FString GameName = GConfig->GetStr(TEXT("URL"), TEXT("GameName"), GEngineIni);
-
-	const FString AppName = FString::Printf( LocalizeSecure( LocalizeUnrealEd( "UnrealEdTitle_RHI_F" ), *GameName, *PlatformBitsString, *RHIName ) );
-#endif
-
-	// In case there isn't any localization for this window, use the default
-	FString CaptionString = AppName;
-	if (CaptionString.Len() == 0)
+	if(levelName == TEXT(""))
 	{
-		CaptionString = TEXT("UnrealEd");
+		return FString::Printf(TEXT("Duke's Enormous Tool"));
 	}
 
-	return CaptionString;
+	return FString::Printf(TEXT("Duke's Enormous Tool: %s"), *levelName);
 }
 
 WxEditorFrame::~WxEditorFrame()
@@ -1786,9 +1768,15 @@ void WxEditorFrame::SetFileSystemNotifications(const UBOOL bTextureListenOnOff, 
  */
 void WxEditorFrame::RefreshCaption(const FFilename* LevelFilename)
 {
-	const FString BaseCaption = GetLocalizedCaption();
-	const FString CaptionWithLevel = *FString::Printf( LocalizeSecure(LocalizeUnrealEd("UnrealEdCaption_F"), (LevelFilename->Len()?*LevelFilename->GetBaseFilename():*LocalizeUnrealEd("Untitled")), *BaseCaption) );
-	SetTitle( *CaptionWithLevel );
+	FString BaseCaption;
+	
+	if(LevelFilename->Len() > 0)
+		BaseCaption = GetLocalizedCaption(*LevelFilename);
+	else
+		BaseCaption = GetLocalizedCaption(TEXT("Untitled"));
+
+	//const FString CaptionWithLevel = *FString::Printf( LocalizeSecure(LocalizeUnrealEd("UnrealEdCaption_F"), (LevelFilename->Len()?*LevelFilename->GetBaseFilename():*LocalizeUnrealEd("Untitled")), *BaseCaption) );
+	SetTitle( *BaseCaption );
 }
 
 ///////////////////////////////////////////////////////////////////////////////

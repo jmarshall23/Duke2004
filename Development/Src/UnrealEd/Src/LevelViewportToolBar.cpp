@@ -615,7 +615,8 @@ void WxLevelViewportToolBar::OnPlayInViewport( wxCommandEvent& In )
 		{
 			FVector* StartLocation = NULL;
 			FRotator* StartRotation = NULL;
-
+// jmarshall
+/*
 			// If this is a perspective viewport, then we'll Play From Here
 			if( ViewportClient->ViewportType == LVT_Perspective )
 			{
@@ -623,7 +624,8 @@ void WxLevelViewportToolBar::OnPlayInViewport( wxCommandEvent& In )
 				StartLocation = &ViewportClient->ViewLocation;
 				StartRotation = &ViewportClient->ViewRotation;
 			}
-
+*/
+// jmarshall end
 			// Figure out which viewport index we are
 			INT MyViewportIndex = -1;
 			for( INT CurViewportIndex = 0; CurViewportIndex < GApp->EditorFrame->ViewportConfigData->GetViewportCount(); ++CurViewportIndex )

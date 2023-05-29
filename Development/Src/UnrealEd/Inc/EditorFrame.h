@@ -47,7 +47,7 @@ protected:
 	 * Returns the localized caption for this frame window. It looks in the
 	 * editor's INI file to determine which localization file to use
 	 */
-	virtual FString GetLocalizedCaption();
+	virtual FString GetLocalizedCaption(FString levelName = TEXT(""));
 
 public:
 	class WxButtonBar* ButtonBar;
