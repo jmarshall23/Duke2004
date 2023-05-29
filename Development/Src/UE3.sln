@@ -207,27 +207,6 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DukeEditor", "DukeEditor\DukeEditor.vcxproj", "{3205C646-2EF6-4025-9188-A5055486A920}"
 EndProject
 Global
-	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 3
-		SccProjectUniqueName0 = Flash\\UDKGame\u0020Flash.vcxproj
-		SccProjectTopLevelParentUniqueName0 = UE3.sln
-		SccProjectName0 = Perforce\u0020Project
-		SccLocalPath0 = .
-		SccProvider0 = MSSCCI:Perforce\u0020SCM
-		SccProjectFilePathRelativizedFromConnection0 = Flash\\
-		SccProjectUniqueName1 = Flash\\Flash.vcxproj
-		SccProjectTopLevelParentUniqueName1 = UE3.sln
-		SccProjectName1 = Perforce\u0020Project
-		SccLocalPath1 = .
-		SccProvider1 = MSSCCI:Perforce\u0020SCM
-		SccProjectFilePathRelativizedFromConnection1 = Flash\\
-		SccProjectUniqueName2 = Flash\\LaunchFlash.vcxproj
-		SccProjectTopLevelParentUniqueName2 = UE3.sln
-		SccProjectName2 = Perforce\u0020Project
-		SccLocalPath2 = .
-		SccProvider2 = MSSCCI:Perforce\u0020SCM
-		SccProjectFilePathRelativizedFromConnection2 = Flash\\
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		BuiltWithUnrealBuildTool|Mixed platforms = BuiltWithUnrealBuildTool|Mixed platforms
 		BuiltWithUnrealBuildTool|Win32 = BuiltWithUnrealBuildTool|Win32
@@ -1121,5 +1100,26 @@ Global
 		{8A512179-5EC4-43ED-ABA7-5F70BFAAA8E2} = {1F7D896A-889D-415D-BC8F-159816415236}
 		{3205C646-2EF6-4025-9188-A5055486A920} = {1F7D896A-889D-415D-BC8F-159816415236}
 		{6694A6FE-21D3-4230-AD60-7093E8A578E5} = {B1BB5F5A-C2A6-4AB1-8593-C90976DEF050}
+	EndGlobalSection
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 3
+		SccProjectUniqueName0 = Flash\\UDKGame\u0020Flash.vcxproj
+		SccProjectTopLevelParentUniqueName0 = UE3.sln
+		SccProjectName0 = Perforce\u0020Project
+		SccLocalPath0 = .
+		SccProvider0 = MSSCCI:Perforce\u0020SCM
+		SccProjectFilePathRelativizedFromConnection0 = Flash\\
+		SccProjectUniqueName1 = Flash\\Flash.vcxproj
+		SccProjectTopLevelParentUniqueName1 = UE3.sln
+		SccProjectName1 = Perforce\u0020Project
+		SccLocalPath1 = .
+		SccProvider1 = MSSCCI:Perforce\u0020SCM
+		SccProjectFilePathRelativizedFromConnection1 = Flash\\
+		SccProjectUniqueName2 = Flash\\LaunchFlash.vcxproj
+		SccProjectTopLevelParentUniqueName2 = UE3.sln
+		SccProjectName2 = Perforce\u0020Project
+		SccLocalPath2 = .
+		SccProvider2 = MSSCCI:Perforce\u0020SCM
+		SccProjectFilePathRelativizedFromConnection2 = Flash\\
 	EndGlobalSection
 EndGlobal

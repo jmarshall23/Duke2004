@@ -559,12 +559,16 @@ namespace UnrealBuildTool
 				UE3BuildConfiguration.bCompileBink = SetUpBink1Environment();
 			}
 
-			if( !UE3BuildConfiguration.bCompileBink )
-			{
-				// Not using Bink
-				GlobalCPPEnvironment.Definitions.Add( "USE_BINK_CODEC=0" );
-				UE3BuildConfiguration.BinkVersion = 0;
-			}
+            if (!UE3BuildConfiguration.bCompileBink)
+            {
+                // Not using Bink
+                GlobalCPPEnvironment.Definitions.Add("USE_BINK_CODEC=0");
+                UE3BuildConfiguration.BinkVersion = 0;
+            }
+            else
+            {
+                GlobalCPPEnvironment.Definitions.Add("USE_BINK_CODEC=1");
+            }
 		}
 
 		void SetUpSourceControlEnvironment()

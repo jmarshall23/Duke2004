@@ -70,7 +70,7 @@ namespace UnrealBuildTool
 		public static bool bCompileWxWidgets = Utils.GetEnvironmentVariable("ue3.bCompileWxWidgets", true);
 
 		/** Whether to include Bink (version 1 or version 2) support */
-		public static bool bCompileBink = Utils.GetEnvironmentVariable("ue3.bCompileBink", true);
+		public static bool bCompileBink = true; //Utils.GetEnvironmentVariable("ue3.bCompileBink", true);
 
 		/** The version of Bink that is selected */
 		public static int BinkVersion = 0;

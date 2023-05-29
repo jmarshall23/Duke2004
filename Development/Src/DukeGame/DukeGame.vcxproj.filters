@@ -33,15 +33,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Classes\ExampleGameInfo.uc">
-      <Filter>Classes</Filter>
-    </None>
-    <None Include="Classes\ExamplePawn.uc">
-      <Filter>Classes</Filter>
-    </None>
-    <None Include="Classes\ExamplePlayerController.uc">
-      <Filter>Classes</Filter>
-    </None>
     <None Include="..\..\..\ExampleGame\Localization\Int\ExampleGame.int">
       <Filter>Int</Filter>
     </None>
@@ -126,12 +117,30 @@
     <None Include="..\..\..\ExampleGame\Config\Xbox360\Xbox360Engine.ini">
       <Filter>Ini\Xbox360</Filter>
     </None>
+    <None Include="Classes\DukeGameInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\DukePawn.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\DukePlayerController.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\DukeHud.uc">
+      <Filter>Classes</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\NullSurveys.cpp">
       <Filter>Src</Filter>
     </ClCompile>
     <ClCompile Include="Src\DukeGame.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\DukePawn.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\DukeHud.cpp">
       <Filter>Src</Filter>
     </ClCompile>
   </ItemGroup>

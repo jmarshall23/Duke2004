@@ -8,6 +8,7 @@
 #pragma pack (push,4)
 #endif
 
+#include "DukeGameNames.h"
 
 // Split enums from the rest of the header so they can be included earlier
 // than the rest of the header file by including this file twice with different
@@ -24,20 +25,114 @@
 #if !ENUMS_ONLY
 
 #ifndef NAMES_ONLY
-#define AUTOGENERATE_NAME(name) extern FName DUKEGAME_##name;
 #define AUTOGENERATE_FUNCTION(cls,idx,name)
 #endif
+
 
 #ifndef NAMES_ONLY
 
 #ifndef INCLUDED_DUKEGAME_CLASSES
 #define INCLUDED_DUKEGAME_CLASSES 1
+#define ENABLE_DECLARECLASS_MACRO 1
+#include "UnObjBas.h"
+#undef ENABLE_DECLARECLASS_MACRO
 
+class ADukeHUD : public AHUD
+{
+public:
+    //## BEGIN PROPS DukeHUD
+    FLOAT Opacity;
+    FColor CrosshairColor;
+    FColor TextColor;
+    FColor HUDColor;
+    INT CrosshairCount;
+    class UTexture* CrosshairTextures[20];
+    FLOAT DesiredIndexTop;
+    FLOAT RootIndexTop;
+    FLOAT IndexTop;
+    FLOAT IndexBottom;
+    FLOAT IndexAdjust;
+    FLOAT BarOffset;
+    FLOAT HUDScale;
+    FLOAT HUDScaleX;
+    FLOAT HUDScaleY;
+    INT MaxIndexItems;
+    INT ItemSpace;
+    FLOAT TextRightAdjust;
+    FLOAT BarPos;
+    FLOAT BarLeft;
+    FLOAT TitleLeft;
+    FLOAT TitleOffset;
+    FLOAT SlideRate;
+    FLOAT IndexTopOffset;
+    FStringNoInit IndexName;
+    class UTexture* GradientTexture;
+    class UTexture* IndexBarLeftTexture;
+    class UTexture* IndexBarRightTexture;
+    class UTexture* IndexBarBottomTexture;
+    class UTexture* InventoryBarTopTexture;
+    class UTexture* InventoryBarBotTexture;
+    class UTexture* InventoryCatHLTexture;
+    class UTexture* InventoryCatHLTexture2;
+    class UTexture* MiscBarTabTexture;
+    class UTexture* MiscBarHLTexture;
+    class UTexture* HUDTemplateTexture;
+    class UTexture* ItemSlantTexture;
+    class UTexture* ItemSlantHLTexture;
+    class UTexture* MiscBarTexture;
+    class UTexture* MiscBarTexture2;
+    class UTexture* NumberCircleTexture;
+    //## END PROPS DukeHUD
+
+    virtual void HudStartup();
+    virtual void RenderHud();
+    virtual void DrawScaledTexture(class UTexture* Icon,FLOAT X,FLOAT Y,FVector Scale);
+    DECLARE_FUNCTION(execHudStartup)
+    {
+        P_FINISH;
+        this->HudStartup();
+    }
+    DECLARE_FUNCTION(execRenderHud)
+    {
+        P_FINISH;
+        this->RenderHud();
+    }
+    DECLARE_FUNCTION(execDrawScaledTexture)
+    {
+        P_GET_OBJECT(UTexture,Icon);
+        P_GET_FLOAT(X);
+        P_GET_FLOAT(Y);
+        P_GET_STRUCT(FVector,Scale);
+        P_FINISH;
+        this->DrawScaledTexture(Icon,X,Y,Scale);
+    }
+    DECLARE_CLASS(ADukeHUD,AHUD,0|CLASS_Transient|CLASS_Config,DukeGame)
+	void DrawStatusIndex();
+	void DrawCrosshair();
+};
+
+class ADukePawn : public AGamePawn
+{
+public:
+    //## BEGIN PROPS DukePawn
+    //## END PROPS DukePawn
+
+    DECLARE_CLASS(ADukePawn,AGamePawn,0|CLASS_Config,DukeGame)
+    NO_DEFAULT_CONSTRUCTOR(ADukePawn)
+};
+
+#undef DECLARE_CLASS
+#undef DECLARE_CASTED_CLASS
+#undef DECLARE_ABSTRACT_CLASS
+#undef DECLARE_ABSTRACT_CASTED_CLASS
 #endif // !INCLUDED_DUKEGAME_CLASSES
 #endif // !NAMES_ONLY
 
+AUTOGENERATE_FUNCTION(ADukeHUD,-1,execDrawScaledTexture);
+AUTOGENERATE_FUNCTION(ADukeHUD,-1,execRenderHud);
+AUTOGENERATE_FUNCTION(ADukeHUD,-1,execHudStartup);
+
 #ifndef NAMES_ONLY
-#undef AUTOGENERATE_NAME
 #undef AUTOGENERATE_FUNCTION
 #endif
 
@@ -46,15 +141,29 @@
 #define DUKEGAME_NATIVE_DEFS
 
 #define AUTO_INITIALIZE_REGISTRANTS_DUKEGAME \
+	ADukeHUD::StaticClass(); \
+	GNativeLookupFuncs.Set(FName("DukeHUD"), GDukeGameADukeHUDNatives); \
+	ADukePawn::StaticClass(); \
 
 #endif // DUKEGAME_NATIVE_DEFS
 
 #ifdef NATIVES_ONLY
+FNativeFunctionLookup GDukeGameADukeHUDNatives[] = 
+{ 
+	MAP_NATIVE(ADukeHUD, execDrawScaledTexture)
+	MAP_NATIVE(ADukeHUD, execRenderHud)
+	MAP_NATIVE(ADukeHUD, execHudStartup)
+	{NULL, NULL}
+};
 
 #endif // NATIVES_ONLY
 #endif // STATIC_LINKING_MOJO
 
 #ifdef VERIFY_CLASS_SIZES
+VERIFY_CLASS_OFFSET_NODIE(ADukeHUD,DukeHUD,Opacity)
+VERIFY_CLASS_OFFSET_NODIE(ADukeHUD,DukeHUD,NumberCircleTexture)
+VERIFY_CLASS_SIZE_NODIE(ADukeHUD)
+VERIFY_CLASS_SIZE_NODIE(ADukePawn)
 #endif // VERIFY_CLASS_SIZES
 #endif // !ENUMS_ONLY
 

@@ -36,6 +36,12 @@
 extern INT			GScreenWidth;
 extern INT			GScreenHeight;
 
+
+#undef BinkOpen
+#undef BinkDoFrame
+RADEXPFUNC HBINK RADEXPLINK BinkOpen(char const * name,U32 flags);
+RADEXPFUNC S32  RADEXPLINK BinkDoFrame(HBINK bnk);
+
 class FDwSceneRenderTargetSceneColorProxy : public FRenderTarget
 {
 public:

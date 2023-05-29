@@ -13,9 +13,12 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{8A512179-5EC4-43ED-ABA7-5F70BFAAA8E2}</ProjectGuid>
     <RootNamespace>ExampleGame</RootNamespace>
-    <SccProjectName>Perforce Project</SccProjectName>
-    <SccLocalPath>..\..\..</SccLocalPath>
-    <SccProvider>MSSCCI:Perforce SCM</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
     <Keyword>MakeFileProj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -67,10 +70,11 @@
     <None Include="..\..\..\ExampleGame\Config\Xbox360\Xbox360Engine.ini" />
     <None Include="..\..\..\ExampleGame\Config\Xbox360\Xbox360Game.ini" />
     <None Include="..\..\..\ExampleGame\Config\Xbox360\Xbox360Input.ini" />
-    <None Include="Classes\ExampleGameInfo.uc" />
-    <None Include="Classes\ExamplePawn.uc" />
-    <None Include="Classes\ExamplePlayerController.uc" />
     <None Include="..\..\..\ExampleGame\Localization\Int\ExampleGame.int" />
+    <None Include="Classes\DukeGameInfo.uc" />
+    <None Include="Classes\DukeHud.uc" />
+    <None Include="Classes\DukePawn.uc" />
+    <None Include="Classes\DukePlayerController.uc" />
     <None Include="Live\ExampleGame.PNG" />
     <None Include="Live\ExampleGame.spa" />
     <None Include="Live\ExampleGame.xlast" />
@@ -97,6 +101,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\DukeGame.cpp" />
+    <ClCompile Include="Src\DukeHud.cpp" />
+    <ClCompile Include="Src\DukePawn.cpp" />
     <ClCompile Include="Src\NullSurveys.cpp" />
   </ItemGroup>
   <ItemGroup>
