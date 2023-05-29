@@ -86,9 +86,9 @@ void RHIInit( UBOOL bIsEditor )
 #endif
 			{
 				// command line overrides
-				const UBOOL bForceD3D9 = ParseParam( appCmdLine() ,TEXT( "d3d9" ) ) || ParseParam( appCmdLine(), TEXT( "sm3" ) ) || ParseParam( appCmdLine(), TEXT( "dx9" ) );
-				const UBOOL bForceD3D11 = ParseParam( appCmdLine(), TEXT( "d3d11" ) ) || ParseParam( appCmdLine(), TEXT( "sm5" ) ) || ParseParam( appCmdLine(), TEXT( "dx11" ) );
-				UBOOL bForceOpenGL = ParseParam(appCmdLine(),TEXT("opengl"));
+				const UBOOL bForceD3D9 = FALSE; //ParseParam( appCmdLine() ,TEXT( "d3d9" ) ) || ParseParam( appCmdLine(), TEXT( "sm3" ) ) || ParseParam( appCmdLine(), TEXT( "dx9" ) );
+				const UBOOL bForceD3D11 = TRUE; //ParseParam( appCmdLine(), TEXT( "d3d11" ) ) || ParseParam( appCmdLine(), TEXT( "sm5" ) ) || ParseParam( appCmdLine(), TEXT( "dx11" ) );
+				UBOOL bForceOpenGL = FALSE; //ParseParam(appCmdLine(),TEXT("opengl"));
 				const UBOOL bRenderModeForced = bForceD3D9 || bForceD3D11 || bForceOpenGL;
 
 				if ((bForceD3D11 && bForceD3D9) || (bForceD3D11 && bForceOpenGL) || (bForceD3D9 && bForceOpenGL))
