@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Command Line</string>
+		</dict>
+    <dict>
+      <key>Type</key>
+      <string>PSTextFieldSpecifier</string>
+      <key>Title</key>
+      <string>- Options</string>
+      <key>Key</key>
+      <string>LaunchOptions</string>
+      <key>AutocorrectionType</key>
+      <string>No</string>
+    </dict>
+    <dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>? Options</string>
+			<key>Key</key>
+			<string>URLOptions</string>
+      <key>AutocorrectionType</key>
+      <string>No</string>
+    </dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Benchmarking?</string>
+			<key>Key</key>
+			<string>-benchmark</string>
+      <key>DefaultValue</key>
+      <false/>
+    </dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Benchmark seconds</string>
+			<key>Key</key>
+			<string>-benchmarkseconds=</string>
+			<key>KeyboardType</key>
+			<string>NumberPad</string>
+		</dict>
+    <dict>
+      <key>Type</key>
+      <string>PSToggleSwitchSpecifier</string>
+      <key>Title</key>
+      <string>Force MSAA Off?</string>
+      <key>Key</key>
+      <string>-iphonedisablemsaa</string>
+      <key>DefaultValue</key>
+      <false/>
+    </dict>
+    <dict>
+      <key>Type</key>
+      <string>PSToggleSwitchSpecifier</string>
+      <key>Title</key>
+      <string>Force MSAA On?</string>
+      <key>Key</key>
+      <string>-iphoneforcemsaa</string>
+      <key>DefaultValue</key>
+      <false/>
+    </dict>
+  </array>
+</dict>
+</plist>

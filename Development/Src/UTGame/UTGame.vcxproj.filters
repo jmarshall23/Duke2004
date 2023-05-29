@@ -1,0 +1,1508 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{79e74f6b-4f02-46cc-868f-81842d041b06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Animation">
+      <UniqueIdentifier>{aeef2caf-df14-4fa7-af37-f931b3d431f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Core Game">
+      <UniqueIdentifier>{db252eba-7923-4c9e-a6dc-474b067e4151}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Core Game\Messages">
+      <UniqueIdentifier>{ff235e3f-b422-4442-82c6-e1d4b85efaed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Core Game\Voice">
+      <UniqueIdentifier>{7f9ebfa4-fffc-4000-a4c1-961ea1f18df1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Core Game\Crowd">
+      <UniqueIdentifier>{89b3b078-cd8a-4c8e-ba53-7a0db278e0f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\CTF">
+      <UniqueIdentifier>{70fc197e-8330-46cd-a53b-154072808c03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Damage Types">
+      <UniqueIdentifier>{b84bfb3c-261e-48c2-9e72-83100de61beb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Effects">
+      <UniqueIdentifier>{8f1f9296-ce8e-4fd9-b729-a06b2b36e62f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Inventory">
+      <UniqueIdentifier>{ea78dd1b-7140-48b1-983e-8bebd4cf9ad7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Inventory\Health">
+      <UniqueIdentifier>{4dc670b0-7de9-4216-989f-4a04bfd9408f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Inventory\Armor">
+      <UniqueIdentifier>{944da05d-c474-4475-970f-52a12e1f6b21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Inventory\Ammo">
+      <UniqueIdentifier>{16d55b5d-25c7-45fa-a932-c1038b1cabc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Mutators">
+      <UniqueIdentifier>{40e7af79-97be-4979-a370-87388571640b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Navigation">
+      <UniqueIdentifier>{3884795b-e322-458b-8086-4bd30eb08b6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Projectiles">
+      <UniqueIdentifier>{92a2764a-3be3-4e9c-93b7-1d21a6f65c98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Vehicles">
+      <UniqueIdentifier>{e9f899b0-0fcf-4fdc-9df4-e4d358dbba93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Vehicles\SkelControls">
+      <UniqueIdentifier>{331713ed-1a61-437a-9c7c-8ea047185d47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Vehicles\DeathPieces">
+      <UniqueIdentifier>{245d597b-f783-47ca-87d0-9f9851f05428}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Weapons">
+      <UniqueIdentifier>{cf219ff6-01ce-4fda-bdf2-690744a88862}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\UI">
+      <UniqueIdentifier>{5bca8995-fd0b-4366-a11b-10dd787f6fe2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\UI\Datastores">
+      <UniqueIdentifier>{4ffdbe53-e939-436a-b74d-1814bf3623ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\DemoGame">
+      <UniqueIdentifier>{c2b62056-0964-4e1e-b4d1-a095f94fda89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Kismet">
+      <UniqueIdentifier>{999253c9-efb4-4176-bb35-51bd11febf11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\CustomChar">
+      <UniqueIdentifier>{70390ab3-ce00-46b9-b541-d6b1df179f15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Online">
+      <UniqueIdentifier>{8a46a6d5-cfae-4935-bf2b-159b25415f7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\GFx UI">
+      <UniqueIdentifier>{69653470-668d-408b-af1c-1f3f131d30b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ini">
+      <UniqueIdentifier>{999d8534-43c4-4b03-8094-f564ba68589c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ini\IPhone">
+      <UniqueIdentifier>{3b3761bf-5cb1-4dc3-b247-047afac5a7ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ini\Tegra">
+      <UniqueIdentifier>{36b3855c-a017-40e5-9596-54794d500092}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ini\PS3">
+      <UniqueIdentifier>{8f14d61a-07ec-413e-be13-9c0a0aeb00b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ini\Xenon">
+      <UniqueIdentifier>{81bbf5c7-5c27-48ac-b154-bfce524d41cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ini\PCServer">
+      <UniqueIdentifier>{b027ac4a-a035-456c-85a9-986595022ad5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ini\Mobile">
+      <UniqueIdentifier>{65740076-130d-431d-9d28-bf08a1e50a8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ini\Android">
+      <UniqueIdentifier>{cab04d79-2443-49ea-a748-55f53680527f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ini\NGP">
+      <UniqueIdentifier>{0277c317-57fe-4022-81fd-0c9b571e027e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Live">
+      <UniqueIdentifier>{5522cd02-7e95-412b-9a06-0fdce7170413}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Live\Pics">
+      <UniqueIdentifier>{4ad3ed9d-5402-4d5f-a54a-4b9acea174ec}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Classes\PhysAnimTestActor.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTAmbientSoundComponent.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTArmorPickupLight.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTDynamicWaterVolume.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTHealthPickupLight.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTTeleporterCustomMesh.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTWeaponLockerPickupLight.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTWeaponPickupLight.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTAnimBlendBase.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimBlendByDriving.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimBlendByFall.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimBlendByFlying.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimBlendByHoverboarding.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimBlendByHoverboardTilt.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimBlendByHoverboardTurn.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimBlendByHoverJump.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimBlendByIdle.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimBlendByPhysics.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimBlendByPhysicsVolume.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimBlendByPosture.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimBlendBySlotActive.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimBlendBySpeed.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimBlendByTurnInPlace.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimBlendByVehicle.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimBlendByWeapon.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimBlendByWeapType.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimNodeCopyBoneTranslation.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimNodeFramePlayer.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimNodeJumpLeanOffset.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimNodeSequence.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimNodeSequenceByBoneRotation.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTAnimNodeSeqWeap.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_CantileverBeam.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_CicadaEngine.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_Damage.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_DamageHinge.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_DamageSpring.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_HoverboardSuspension.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_HoverboardSwing.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_HoverboardVibration.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_HugGround.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_JetThruster.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_LockRotation.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_LookAt.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_MassBoneScaling.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_Oscillate.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_Rotate.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_TurretConstrained.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="Classes\DemoRecSpectator.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\ForcedDirVolume.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTActorFactoryAI.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTActorFactoryPickup.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTActorFactoryTeamStaticMesh.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTActorFactoryUTKActor.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTActorFactoryVehicle.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTAreaNamingVolume.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTAutoCrouchVolume.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTBot.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTCheatManager.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTConsolePlayerController.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTConsolePlayerInput.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTDeathmatch.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTDecalManager.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTDMRoster.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTDMSquad.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTEntryGame.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTEntryHUD.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTEntryPlayerController.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTGame.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTGameObjective.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTGameReplicationInfo.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTHUD.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTHUDBase.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTKActor.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTKillZVolume.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTLavaVolume.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTMapInfo.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTMapMusicInfo.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTMusicManager.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTObjectiveAnnouncement.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTPawn.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTPawnSoundGroup.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTPawnSoundGroup_Liandri.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTPhysicalMaterialProperty.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTPlayerController.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTPlayerInput.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTPlayerReplicationInfo.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTPowerupPickupFactory.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTQueuedAnnouncement.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTScriptedBotVolume.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTSeqEvent_GameEnded.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTSlimeVolume.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTSquadAI.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTStartupMessage.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTTeamAI.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTTeamGame.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTTeamHUD.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTTeamInfo.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTTeamStaticMesh.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTTimedPowerup.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTTimerMessage.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTVehicleCantCarryFlagMessage.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTVictimMessage.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTVictoryMessage.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTWaterVolume.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTWillowWhisp.uc">
+      <Filter>Classes\Core Game</Filter>
+    </None>
+    <None Include="Classes\UTAnnouncer.uc">
+      <Filter>Classes\Core Game\Messages</Filter>
+    </None>
+    <None Include="Classes\UTCarriedObjectMessage.uc">
+      <Filter>Classes\Core Game\Messages</Filter>
+    </None>
+    <None Include="Classes\UTDeathMessage.uc">
+      <Filter>Classes\Core Game\Messages</Filter>
+    </None>
+    <None Include="Classes\UTFirstBloodMessage.uc">
+      <Filter>Classes\Core Game\Messages</Filter>
+    </None>
+    <None Include="Classes\UTIdleKickWarningMessage.uc">
+      <Filter>Classes\Core Game\Messages</Filter>
+    </None>
+    <None Include="Classes\UTKillerMessage.uc">
+      <Filter>Classes\Core Game\Messages</Filter>
+    </None>
+    <None Include="Classes\UTKillingSpreeMessage.uc">
+      <Filter>Classes\Core Game\Messages</Filter>
+    </None>
+    <None Include="Classes\UTKillsRemainingMessage.uc">
+      <Filter>Classes\Core Game\Messages</Filter>
+    </None>
+    <None Include="Classes\UTLocalMessage.uc">
+      <Filter>Classes\Core Game\Messages</Filter>
+    </None>
+    <None Include="Classes\UTLockWarningMessage.uc">
+      <Filter>Classes\Core Game\Messages</Filter>
+    </None>
+    <None Include="Classes\UTMultiKillMessage.uc">
+      <Filter>Classes\Core Game\Messages</Filter>
+    </None>
+    <None Include="Classes\UTObjectiveSpecificMessage.uc">
+      <Filter>Classes\Core Game\Messages</Filter>
+    </None>
+    <None Include="Classes\UTPickupMessage.uc">
+      <Filter>Classes\Core Game\Messages</Filter>
+    </None>
+    <None Include="Classes\UTSayMsg.uc">
+      <Filter>Classes\Core Game\Messages</Filter>
+    </None>
+    <None Include="Classes\UTScavengerMessage.uc">
+      <Filter>Classes\Core Game\Messages</Filter>
+    </None>
+    <None Include="Classes\UTTeamDeathMessage.uc">
+      <Filter>Classes\Core Game\Messages</Filter>
+    </None>
+    <None Include="Classes\UTTeamGameMessage.uc">
+      <Filter>Classes\Core Game\Messages</Filter>
+    </None>
+    <None Include="Classes\UTTeamSayMSg.uc">
+      <Filter>Classes\Core Game\Messages</Filter>
+    </None>
+    <None Include="Classes\UTVoice.uc">
+      <Filter>Classes\Core Game\Voice</Filter>
+    </None>
+    <None Include="Classes\UTVoice_Robot.uc">
+      <Filter>Classes\Core Game\Voice</Filter>
+    </None>
+    <None Include="Classes\SeqAct_UTCrowdSpawner.uc">
+      <Filter>Classes\Core Game\Crowd</Filter>
+    </None>
+    <None Include="Classes\UTPopulationManager.uc">
+      <Filter>Classes\Core Game\Crowd</Filter>
+    </None>
+    <None Include="Classes\UTCarriedObject.uc">
+      <Filter>Classes\CTF</Filter>
+    </None>
+    <None Include="Classes\UTCTFBase.uc">
+      <Filter>Classes\CTF</Filter>
+    </None>
+    <None Include="Classes\UTCTFFlag.uc">
+      <Filter>Classes\CTF</Filter>
+    </None>
+    <None Include="Classes\UTCTFGame.uc">
+      <Filter>Classes\CTF</Filter>
+    </None>
+    <None Include="Classes\UTCTFHUD.uc">
+      <Filter>Classes\CTF</Filter>
+    </None>
+    <None Include="Classes\UTCTFHUDMessage.uc">
+      <Filter>Classes\CTF</Filter>
+    </None>
+    <None Include="Classes\UTCTFSquadAI.uc">
+      <Filter>Classes\CTF</Filter>
+    </None>
+    <None Include="Classes\UTCTFTeamAI.uc">
+      <Filter>Classes\CTF</Filter>
+    </None>
+    <None Include="Classes\UTLastSecondMessage.uc">
+      <Filter>Classes\CTF</Filter>
+    </None>
+    <None Include="Classes\UTVehicleCTFGame.uc">
+      <Filter>Classes\CTF</Filter>
+    </None>
+    <None Include="Classes\UTVehicleCTFHUD.uc">
+      <Filter>Classes\CTF</Filter>
+    </None>
+    <None Include="Classes\UTDamageType.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_Burning.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_Drowned.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_Encroached.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_Grenade.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_Instagib.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_Lava.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_LinkBeam.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_LinkPlasma.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_Pancake.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_RanOver.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_Rocket.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_ScorpionSelfDestruct.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_SeekingRocket.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_ShockBall.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_ShockCombo.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_ShockPrimary.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_SpaceDeath.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_Telefrag.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_VehicleCollision.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_VehicleExplosion.uc">
+      <Filter>Classes\Damage Types</Filter>
+    </None>
+    <None Include="Classes\UTCicadaRocketExplosionLight.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTEmit_BloodSpray.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTEmit_BodyFlame.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTEmit_HeadShotHelmet.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTEmit_HitEffect.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTEmit_ShockCombo.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTEmit_TransLocateOut.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTEmit_TransLocateOutRed.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTEmit_VehicleHit.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTEmitCameraEffect.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTEmitter.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTGib.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTGib_Robot.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTGib_RobotArm.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTGib_RobotChunk.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTGib_RobotHand.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTGib_RobotHead.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTGib_RobotLeg.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTGib_RobotTorso.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTGib_Vehicle.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTGibSkeletalMeshComponent.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTGibStaticMeshComponent.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTGreenMuzzleFlashLight.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTHugeExplosionLight.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTLeviathanMuzzleFlashLight.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTLinkBeamLight.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTLinkGunMuzzleFlashLight.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTParticleSystemComponent.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTReplicatedEmitter.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTRocketExplosionLight.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTRocketLight.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTRocketMuzzleFlashLight.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTSD_SpawnedKActor.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTShockBallLight.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTShockComboExplosionLight.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTShockImpactLight.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTShockMuzzleFlashLight.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTSimpleDestroyable.uc">
+      <Filter>Classes\Effects</Filter>
+    </None>
+    <None Include="Classes\UTAmmoPickupFactory.uc">
+      <Filter>Classes\Inventory</Filter>
+    </None>
+    <None Include="Classes\UTDroppedItemPickup.uc">
+      <Filter>Classes\Inventory</Filter>
+    </None>
+    <None Include="Classes\UTDroppedPickup.uc">
+      <Filter>Classes\Inventory</Filter>
+    </None>
+    <None Include="Classes\UTInventory.uc">
+      <Filter>Classes\Inventory</Filter>
+    </None>
+    <None Include="Classes\UTInventoryManager.uc">
+      <Filter>Classes\Inventory</Filter>
+    </None>
+    <None Include="Classes\UTItemPickupFactory.uc">
+      <Filter>Classes\Inventory</Filter>
+    </None>
+    <None Include="Classes\UTPickupFactory.uc">
+      <Filter>Classes\Inventory</Filter>
+    </None>
+    <None Include="Classes\UTPickupInventory.uc">
+      <Filter>Classes\Inventory</Filter>
+    </None>
+    <None Include="Classes\UTRotatingDroppedPickup.uc">
+      <Filter>Classes\Inventory</Filter>
+    </None>
+    <None Include="Classes\UTHealthPickupFactory.uc">
+      <Filter>Classes\Inventory\Health</Filter>
+    </None>
+    <None Include="Classes\UTPickupFactory_HealthVial.uc">
+      <Filter>Classes\Inventory\Health</Filter>
+    </None>
+    <None Include="Classes\UTArmorPickupFactory.uc">
+      <Filter>Classes\Inventory\Armor</Filter>
+    </None>
+    <None Include="Classes\UTAmmo_LinkGun.uc">
+      <Filter>Classes\Inventory\Ammo</Filter>
+    </None>
+    <None Include="Classes\UTAmmo_RocketLauncher.uc">
+      <Filter>Classes\Inventory\Ammo</Filter>
+    </None>
+    <None Include="Classes\UTAmmo_ShockRifle.uc">
+      <Filter>Classes\Inventory\Ammo</Filter>
+    </None>
+    <None Include="Classes\UTMutator.uc">
+      <Filter>Classes\Mutators</Filter>
+    </None>
+    <None Include="Classes\UTMutator_Arena.uc">
+      <Filter>Classes\Mutators</Filter>
+    </None>
+    <None Include="Classes\UTMutator_BigHead.uc">
+      <Filter>Classes\Mutators</Filter>
+    </None>
+    <None Include="Classes\UTMutator_FriendlyFire.uc">
+      <Filter>Classes\Mutators</Filter>
+    </None>
+    <None Include="Classes\UTMutator_Handicap.uc">
+      <Filter>Classes\Mutators</Filter>
+    </None>
+    <None Include="Classes\UTMutator_LowGrav.uc">
+      <Filter>Classes\Mutators</Filter>
+    </None>
+    <None Include="Classes\UTMutator_NoHoverboard.uc">
+      <Filter>Classes\Mutators</Filter>
+    </None>
+    <None Include="Classes\UTMutator_NoPowerups.uc">
+      <Filter>Classes\Mutators</Filter>
+    </None>
+    <None Include="Classes\UTMutator_Slomo.uc">
+      <Filter>Classes\Mutators</Filter>
+    </None>
+    <None Include="Classes\UTMutator_SlowTimeKills.uc">
+      <Filter>Classes\Mutators</Filter>
+    </None>
+    <None Include="Classes\UTMutator_SpeedFreak.uc">
+      <Filter>Classes\Mutators</Filter>
+    </None>
+    <None Include="Classes\UTMutator_SuperBerserk.uc">
+      <Filter>Classes\Mutators</Filter>
+    </None>
+    <None Include="Classes\UTMutator_WeaponsRespawn.uc">
+      <Filter>Classes\Mutators</Filter>
+    </None>
+    <None Include="Classes\UTAvoidMarker.uc">
+      <Filter>Classes\Navigation</Filter>
+    </None>
+    <None Include="Classes\UTDefensePoint.uc">
+      <Filter>Classes\Navigation</Filter>
+    </None>
+    <None Include="Classes\UTHoldSpot.uc">
+      <Filter>Classes\Navigation</Filter>
+    </None>
+    <None Include="Classes\UTJumpLiftExit.uc">
+      <Filter>Classes\Navigation</Filter>
+    </None>
+    <None Include="Classes\UTJumpPad.uc">
+      <Filter>Classes\Navigation</Filter>
+    </None>
+    <None Include="Classes\UTJumpPadReachspec.uc">
+      <Filter>Classes\Navigation</Filter>
+    </None>
+    <None Include="Classes\UTPortal.uc">
+      <Filter>Classes\Navigation</Filter>
+    </None>
+    <None Include="Classes\UTScout.uc">
+      <Filter>Classes\Navigation</Filter>
+    </None>
+    <None Include="Classes\UTTeamPlayerStart.uc">
+      <Filter>Classes\Navigation</Filter>
+    </None>
+    <None Include="Classes\UTTrajectoryReachSpec.uc">
+      <Filter>Classes\Navigation</Filter>
+    </None>
+    <None Include="Classes\UTProj_Grenade.uc">
+      <Filter>Classes\Projectiles</Filter>
+    </None>
+    <None Include="Classes\UTProj_LinkPlasma.uc">
+      <Filter>Classes\Projectiles</Filter>
+    </None>
+    <None Include="Classes\UTProj_LinkPowerPlasma.uc">
+      <Filter>Classes\Projectiles</Filter>
+    </None>
+    <None Include="Classes\UTProj_LoadedRocket.uc">
+      <Filter>Classes\Projectiles</Filter>
+    </None>
+    <None Include="Classes\UTProj_Rocket.uc">
+      <Filter>Classes\Projectiles</Filter>
+    </None>
+    <None Include="Classes\UTProj_ScorpionGlob_Base.uc">
+      <Filter>Classes\Projectiles</Filter>
+    </None>
+    <None Include="Classes\UTProj_SeekingRocket.uc">
+      <Filter>Classes\Projectiles</Filter>
+    </None>
+    <None Include="Classes\UTProjectile.uc">
+      <Filter>Classes\Projectiles</Filter>
+    </None>
+    <None Include="Classes\UTAirVehicle.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTHoverWheel.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTTurretMuzzleFlashLight.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTVehicle.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTVehicle_Cicada.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTVehicle_Hoverboard.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTVehicle_Manta.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTVehicle_Scorpion.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTVehicleBoostPad.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTVehicleFactory.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTVehicleKillMessage.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTVehicleMessage.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTVehicleScorpionWheel.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTVehicleShield.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTWeaponPawn.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\VehicleMovementEffect.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_MantaBlade.uc">
+      <Filter>Classes\Vehicles\SkelControls</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_MantaFlaps.uc">
+      <Filter>Classes\Vehicles\SkelControls</Filter>
+    </None>
+    <None Include="Classes\UTSkelControl_SpinControl.uc">
+      <Filter>Classes\Vehicles\SkelControls</Filter>
+    </None>
+    <None Include="Classes\UTGib_VehiclePiece.uc">
+      <Filter>Classes\Vehicles\DeathPieces</Filter>
+    </None>
+    <None Include="Classes\UTVehicleDeathPiece.uc">
+      <Filter>Classes\Vehicles\DeathPieces</Filter>
+    </None>
+    <None Include="Classes\UTAttachment_LinkGun.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTBeamWeapon.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTBeamWeaponAttachment.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTClientSideWeaponPawn.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTStingerMuzzleFlashLight.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTVehicleWeapon.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTVWeap_TowCable.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTWeap_LinkGun.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTWeap_PhysicsGun.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTWeap_RocketLauncher.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTWeap_ShockRifleBase.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTWeapon.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTWeaponAttachment.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTWeaponKillMessage.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTWeaponKillRewardMessage.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTWeaponLocker.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTWeaponPickupFactory.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTWeaponRewardMessage.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTWeaponSwitchMessage.uc">
+      <Filter>Classes\Weapons</Filter>
+    </None>
+    <None Include="Classes\UTConsole.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="Classes\UTGameInteraction.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="Classes\UTGameViewportClient.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="Classes\UTDataStore_GameSearchFavorites.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTDataStore_GameSearchHistory.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTDataStore_GameSearchPersonal.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTUIDataProvider_GameModeInfo.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTUIDataProvider_KeyBinding.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTUIDataProvider_MapInfo.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTUIDataProvider_MenuOption.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTUIDataProvider_MultiplayerMenuItem.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTUIDataProvider_Mutator.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTUIDataProvider_SearchResult.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTUIDataProvider_ServerDetails.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTUIDataProvider_SettingsMenuItem.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTUIDataProvider_SimpleElementProvider.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTUIDataProvider_StringArray.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTUIDataProvider_Weapon.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTUIDataStore_MenuItems.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTUIDataStore_Options.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTUIDataStore_StringAliasBindingsMap.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTUIDataStore_StringAliasMap.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTUIDataStore_StringList.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\UTUIResourceDataProvider.uc">
+      <Filter>Classes\UI\Datastores</Filter>
+    </None>
+    <None Include="Classes\MorphTestActor.uc">
+      <Filter>Classes\DemoGame</Filter>
+    </None>
+    <None Include="Classes\SeqAct_SetPATAState.uc">
+      <Filter>Classes\DemoGame</Filter>
+    </None>
+    <None Include="Classes\SeqAct_SetWheelParticles.uc">
+      <Filter>Classes\DemoGame</Filter>
+    </None>
+    <None Include="Classes\UTDummyPawn.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTKismetAnnouncement.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTScriptedVoiceMessage.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_ActivateRocketBoosters.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_AddNamedBot.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_AIFreeze.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_AIStartFireAt.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_AIStopFire.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_ChangeTeam.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_DummyWeaponFire.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_EnterVehicle.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_ExitVehicle.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_GetTeamNum.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_HoverboardSpinJump.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_InfiniteAmmo.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_PlayAnim.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_PlayAnnouncement.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_PlayCameraAnim.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_ReturnCTFFlag.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_ScriptedVoiceMessage.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_SelfDestruct.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_SetBotsMustComplete.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_SetVisibilityModifier.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_SpawnProjectile.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_StopCameraAnim.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_ToggleAnnouncements.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqAct_UseHoverboard.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqCond_CheckWeapon.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqCond_DoTutorial.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqCond_HasInventory.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqCond_IsCarryingFlag.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqCond_IsConsole.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqCond_IsUsingWeapon.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqEvent_FlagEvent.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqEvent_ObjectiveCompleted.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqEvent_SkipCinematic.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTSeqEvent_VehicleFactory.uc">
+      <Filter>Classes\Kismet</Filter>
+    </None>
+    <None Include="Classes\UTCharInfo.uc">
+      <Filter>Classes\CustomChar</Filter>
+    </None>
+    <None Include="Classes\UTFamilyInfo.uc">
+      <Filter>Classes\CustomChar</Filter>
+    </None>
+    <None Include="Classes\UTFamilyInfo_Liandri.uc">
+      <Filter>Classes\CustomChar</Filter>
+    </None>
+    <None Include="Classes\UTFamilyInfo_Liandri_Male.uc">
+      <Filter>Classes\CustomChar</Filter>
+    </None>
+    <None Include="Classes\UTAchievements.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTAchievementsBase.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTDataStore_GameSearchDM.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTDataStore_GameSettingsDM.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTGameSearchCommon.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTGameSearchCTF.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTGameSearchCustom.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTGameSearchDM.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTGameSearchPersonal.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTGameSearchTDM.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTGameSearchVCTF.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTGameSettingsCommon.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTGameSettingsCTF.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTGameSettingsDM.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTGameSettingsPersonal.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTGameSettingsTDM.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTGameSettingsVCTF.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTLeaderboardRead.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTOnlineConstants.uci">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTOnlineStats.uci">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTStatsReadAchievements.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTStatsWriteAchievements.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTStatsWriteCTF.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTStatsWriteDM.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\UTStatsWriteTDM.uc">
+      <Filter>Classes\Online</Filter>
+    </None>
+    <None Include="Classes\GFxMinimap.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxMinimapHud.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxProjectedUI.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_Dialog.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_ErrorDialog.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_FilterDialog.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_GameMode.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_HostGame.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_InfoDialog.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_InstantAction.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_JoinDialog.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_JoinGame.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_LaunchGame.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_MainMenu.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_MapSelect.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_Multiplayer.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_Mutators.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_PasswordDialog.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_Screen.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_ServerSettings.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_Settings.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_SettingsBase.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUDKFrontEnd_View.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUI_InventoryButton.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUI_PauseMenu.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUIFrontEnd_TitleScreen.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUILeaderboard.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUIScoreboard.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUIView.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\UTGFxHudWrapper.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\UTGFxTeamHUD.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\UTGFxTeamHUDWrapper.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\UTGFxTweenableMoviePlayer.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\DefaultBase.ini">
+      <Filter>ini</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\DefaultCharInfo.ini">
+      <Filter>ini</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\DefaultCompat.ini">
+      <Filter>ini</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\DefaultEditor.ini">
+      <Filter>ini</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\DefaultEditorKeyBindings.ini">
+      <Filter>ini</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\DefaultEditorUserSettings.ini">
+      <Filter>ini</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\DefaultEngine.ini">
+      <Filter>ini</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\DefaultEngineUDK.ini">
+      <Filter>ini</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\DefaultGame.ini">
+      <Filter>ini</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\DefaultGameUDK.ini">
+      <Filter>ini</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\DefaultInput.ini">
+      <Filter>ini</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\DefaultInputDefaults.ini">
+      <Filter>ini</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\DefaultLightmass.ini">
+      <Filter>ini</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\DefaultUI.ini">
+      <Filter>ini</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\DefaultWeapon.ini">
+      <Filter>ini</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\DefaultWeaponDefaults.ini">
+      <Filter>ini</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\WrangleContent.ini">
+      <Filter>ini</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\IPhone\IPhoneEngine.ini">
+      <Filter>ini\IPhone</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\IPhone\IPhoneGame.ini">
+      <Filter>ini\IPhone</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\IPhone\IPhoneInput.ini">
+      <Filter>ini\IPhone</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\IPhone\IPhoneUI.ini">
+      <Filter>ini\IPhone</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\PS3\PS3Engine.ini">
+      <Filter>ini\PS3</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\PS3\PS3Game.ini">
+      <Filter>ini\PS3</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\PS3\PS3Input.ini">
+      <Filter>ini\PS3</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\PS3\PS3UI.ini">
+      <Filter>ini\PS3</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\Xenon\XenonEditor.ini">
+      <Filter>ini\Xenon</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\Xenon\XenonEngine.ini">
+      <Filter>ini\Xenon</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\Xenon\XenonGame.ini">
+      <Filter>ini\Xenon</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\Xenon\XenonInput.ini">
+      <Filter>ini\Xenon</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\Xenon\XenonUI.ini">
+      <Filter>ini\Xenon</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\PCServer\PCServerEngine.ini">
+      <Filter>ini\PCServer</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\PCServer\PCServerGame.ini">
+      <Filter>ini\PCServer</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\PCServer\PCServerInput.ini">
+      <Filter>ini\PCServer</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\PCServer\PCServerUI.ini">
+      <Filter>ini\PCServer</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\Mobile\MobileEngine.ini">
+      <Filter>ini\Mobile</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\Mobile\MobileGame.ini">
+      <Filter>ini\Mobile</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\Mobile\MobileInput.ini">
+      <Filter>ini\Mobile</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\Android\AndroidEngine.ini">
+      <Filter>ini\Android</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\Android\AndroidGame.ini">
+      <Filter>ini\Android</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\Android\AndroidInput.ini">
+      <Filter>ini\Android</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\NGP\NGPEngine.ini">
+      <Filter>ini\NGP</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\NGP\NGPGame.ini">
+      <Filter>ini\NGP</Filter>
+    </None>
+    <None Include="..\..\..\UDKGame\Config\NGP\NGPInput.ini">
+      <Filter>ini\NGP</Filter>
+    </None>
+    <None Include="Live\UT3.spa">
+      <Filter>Live</Filter>
+    </None>
+    <None Include="Live\UT3.xlast">
+      <Filter>Live</Filter>
+    </None>
+    <None Include="Live\xex.xml">
+      <Filter>Live</Filter>
+    </None>
+    <None Include="Live\Pics\Achievement1.png">
+      <Filter>Live\Pics</Filter>
+    </None>
+    <None Include="Live\Pics\UT3_game_image.png">
+      <Filter>Live\Pics</Filter>
+    </None>
+    <None Include="Live\Pics\UT3_marketplace_image.png">
+      <Filter>Live\Pics</Filter>
+    </None>
+    <None Include="UTStats.uci" />
+    <None Include="Classes\GFxUnitTest_ActionScriptThree.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+    <None Include="Classes\GFxUnitTest_ActionScriptThreeWidget.uc">
+      <Filter>Classes\GFx UI</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Src">
+      <UniqueIdentifier>{14753429-4714-4fc9-ae6f-007efdf55f0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Inc">
+      <UniqueIdentifier>{d9453f66-fe78-4aad-b747-87f2fc4b3404}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{bb7b1bb3-44d9-4fa4-8050-f6ba12eb25fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Animation">
+      <UniqueIdentifier>{141008b8-ac60-4cb1-9825-e4a83cfcda8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\UI">
+      <UniqueIdentifier>{4d343bfd-1ebd-4d64-8b5d-7f3a4a05180f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Mobile">
+      <UniqueIdentifier>{c9ed5bd1-d3b2-4e8e-9227-ebf399aca060}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Live">
+      <UniqueIdentifier>{4e620c89-1f13-4ebc-9fb9-a62c29d53882}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Mobile">
+      <UniqueIdentifier>{d98a4781-fcc0-4a40-acd6-d670186527bf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\UDKAnimNodes.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UDKBot.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UDKEffects.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UDKGame.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UDKHoverboard.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UDKHUD.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UDKMobile.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UDKNet.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UDKPathing.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UDKPawn.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UDKPlayerController.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UDKSkelControls.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UDKUI_Base.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UDKUI_DataProviders.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UDKVehicle.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UDKWeapon.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="MobileHUDExt.cpp">
+      <Filter>Src\Mobile</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\UDKBase.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\UDKBaseAnimationClasses.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\UDKBaseClasses.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\UDKBaseNames.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="classes\SimpleGame.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\SimplePawn.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\SimplePC.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKAIDecisionComponent.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKBot.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKCarriedObject.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKEmitCameraEffect.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKEmitterPool.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKExplosionLight.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKForcedDirectionVolume.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKGame.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKGameObjective.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKGameViewportClient.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKJumpPad.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKJumpPadReachspec.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKKActorBreakable.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKMapInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKMapMusicInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKParticleSystemComponent.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKPawn.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKPickupFactory.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKPlayerController.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKPlayerInput.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKProfileSettings.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKProjectile.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKScout.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKScriptedNavigationPoint.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKSkeletalMeshComponent.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKSquadAI.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKTeamOwnedInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKTeamPlayerStart.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKTeleporterBase.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKTrajectoryReachspec.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKVehicle.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKVehicleBase.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKVehicleFactory.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKVehicleMovementEffect.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKVehicleSimCar.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKVehicleSimChopper.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKVehicleSimHover.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKVehicleSimHoverboard.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKVehicleWheel.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKWeapon.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKWeaponPawn.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKWeaponShield.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="classes\UDKAnimBlendBase.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimBlendByDriving.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimBlendByFall.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimBlendByFlying.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimBlendByHoverboarding.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimBlendByHoverboardTilt.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimBlendByHoverboardTurn.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimBlendByHoverJump.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimBlendByIdle.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimBlendByPhysics.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimBlendByPhysicsVolume.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimBlendByPosture.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimBlendBySlotActive.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimBlendBySpeed.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimBlendByTurnInPlace.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimBlendByVehicle.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimBlendByWeapon.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimBlendByWeapType.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimNodeCopyBoneTranslation.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimNodeFramePlayer.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimNodeJumpLeanOffset.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimNodeSequence.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimNodeSequenceByBoneRotation.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKAnimNodeSeqWeap.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKSkelControl_CantileverBeam.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKSkelControl_Damage.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKSkelControl_DamageHinge.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKSkelControl_DamageSpring.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKSkelControl_HoverboardSuspension.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKSkelControl_HoverboardSwing.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKSkelControl_HoverboardVibration.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKSkelControl_HugGround.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKSkelControl_LockRotation.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKSkelControl_LookAt.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKSkelControl_MassBoneScaling.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKSkelControl_PropellerBlade.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKSkelControl_Rotate.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKSkelControl_SpinControl.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKSkelControl_TurretConstrained.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKSkelControl_VehicleFlap.uc">
+      <Filter>Classes\Animation</Filter>
+    </None>
+    <None Include="classes\UDKDataStore_GameSearchBase.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="classes\UDKGameInteraction.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="classes\UDKGameSettingsCommon.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="classes\UDKHUD.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="classes\UDKUIDataProvider_MapInfo.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="classes\UDKUIDataProvider_MenuOption.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="classes\UDKUIDataProvider_SearchResult.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="classes\UDKUIDataProvider_ServerDetails.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="classes\UDKUIDataProvider_SimpleElementProvider.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="classes\UDKUIDataProvider_StringArray.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="classes\UDKUIDataStore_MenuItems.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="classes\UDKUIDataStore_Options.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="classes\UDKUIDataStore_StringAliasBindingMap.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="classes\UDKUIDataStore_StringAliasMap.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="classes\UDKUIDataStore_StringList.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="classes\UDKUIResourceDataProvider.uc">
+      <Filter>Classes\UI</Filter>
+    </None>
+    <None Include="classes\CastleGame.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+    <None Include="classes\CastlePC.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+    <None Include="classes\MobileGameCrowdAgent.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+    <None Include="classes\MobileHUDExt.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+    <None Include="classes\MobileMenuBase.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+    <None Include="classes\MobileMenuControls.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+    <None Include="classes\MobileMenuDebug.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+    <None Include="classes\MobileMenuPause.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+    <None Include="classes\MobileMenuSplash.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+    <None Include="classes\MobilePlaceablePawn.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+    <None Include="classes\MobileProjectile.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+    <None Include="classes\ParticleModuleTypeDataSnow.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+    <None Include="classes\SeqAct_MobileCrowdSpawner.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+    <None Include="Live\LiveConfig.xml">
+      <Filter>Live</Filter>
+    </None>
+    <None Include="classes\CloudGame.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+    <None Include="classes\CloudHUD.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+    <None Include="classes\CloudMenuMicroTrans.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+    <None Include="classes\CloudPC.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+    <None Include="classes\CloudSaveData.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+    <None Include="Classes\UDKMobileInputZone.uc">
+      <Filter>Classes\Mobile</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{ab7acd69-2123-4063-b736-c6afee7e4a0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{3bdd9c01-34c8-4844-8c4e-7c374fd16493}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Inc">
+      <UniqueIdentifier>{ef9e45e0-daaf-45ed-a1e4-5ea49b2f7077}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Int">
+      <UniqueIdentifier>{c48fa4d5-18cf-4c4a-97f7-5c782bfff2bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Live">
+      <UniqueIdentifier>{a7264c82-5484-422c-8ad2-9617e9211bab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ini">
+      <UniqueIdentifier>{7bc9da77-23b2-43ea-8983-cbf067b63f21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ini\PS3">
+      <UniqueIdentifier>{c2332a11-dc54-485d-b4d8-9581e205409e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ini\PCServer">
+      <UniqueIdentifier>{8bdd9d51-11fe-4ce2-b2f2-2e10c9891f8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ini\Xbox360">
+      <UniqueIdentifier>{61b5cb07-93e4-4b44-b666-30006f0148fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Ini\IPhone">
+      <UniqueIdentifier>{61d15f43-828c-4a1b-9b7d-a89b36db24c6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Classes\ExampleGameInfo.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\ExamplePawn.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\ExamplePlayerController.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Localization\Int\ExampleGame.int">
+      <Filter>Int</Filter>
+    </None>
+    <None Include="Live\ExampleGame.PNG">
+      <Filter>Live</Filter>
+    </None>
+    <None Include="Live\ExampleGame.spa">
+      <Filter>Live</Filter>
+    </None>
+    <None Include="Live\ExampleGame.xlast">
+      <Filter>Live</Filter>
+    </None>
+    <None Include="Live\ExampleGameLarge.png">
+      <Filter>Live</Filter>
+    </None>
+    <None Include="Live\GamerPicLarge.png">
+      <Filter>Live</Filter>
+    </None>
+    <None Include="Live\GamerPicSmall.png">
+      <Filter>Live</Filter>
+    </None>
+    <None Include="Live\LiveConfig.xml">
+      <Filter>Live</Filter>
+    </None>
+    <None Include="Live\xex.xml">
+      <Filter>Live</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\DefaultCompat.ini">
+      <Filter>Ini</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\DefaultEditor.ini">
+      <Filter>Ini</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\DefaultEditorKeyBindings.ini">
+      <Filter>Ini</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\DefaultEditorUserSettings.ini">
+      <Filter>Ini</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\DefaultEngine.ini">
+      <Filter>Ini</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\DefaultGame.ini">
+      <Filter>Ini</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\DefaultInput.ini">
+      <Filter>Ini</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\DefaultLightmass.ini">
+      <Filter>Ini</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\DefaultUI.ini">
+      <Filter>Ini</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\PS3\PS3Engine.ini">
+      <Filter>Ini\PS3</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\PS3\PS3Game.ini">
+      <Filter>Ini\PS3</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\PS3\PS3Input.ini">
+      <Filter>Ini\PS3</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\PCServer\PCServerEngine.ini">
+      <Filter>Ini\PCServer</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\PCServer\PCServerGame.ini">
+      <Filter>Ini\PCServer</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\PCServer\PCServerInput.ini">
+      <Filter>Ini\PCServer</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\Xbox360\Xbox360Game.ini">
+      <Filter>Ini\Xbox360</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\Xbox360\Xbox360Input.ini">
+      <Filter>Ini\Xbox360</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\Xbox360\Xbox360Editor.ini">
+      <Filter>Ini\Xbox360</Filter>
+    </None>
+    <None Include="..\..\..\ExampleGame\Config\Xbox360\Xbox360Engine.ini">
+      <Filter>Ini\Xbox360</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\NullSurveys.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\DukeGame.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Inc\DukeGame.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\DukeGameClasses.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<xex>
+  <titleid id="0x4D5707DB"/>
+  <version major="0x1" minor="0x0" 
+     build="10305"
+     qfe="0x00"
+  />
+  <lankey key="FAEBE01D21198334546571728B8CB99F"/>
+  <privilege id="14"/>
+  <section file="UTGame\Live\UT3.spa" name="4D5707DB" memory="RW"/>
+  <mediatypes>
+  <default/>
+  </mediatypes>
+</xex>

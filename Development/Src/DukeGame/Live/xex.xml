@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<xex>
+  <titleid id="0x455007D1"/>
+  <version major="0x1" minor="0x0" 
+     build="10305"
+     qfe="0x00"
+  />
+  <lankey key="FAEBE01D21122334546571728B8CB99F"/>
+  <privilege id="14"/>
+  <section file="ExampleGame\Live\ExampleGame.spa" name="455007D1" memory="RW"/>
+  <mediatypes>
+	  <default/>
+	</mediatypes>
+  <workspace size="0x100000" />
+</xex>

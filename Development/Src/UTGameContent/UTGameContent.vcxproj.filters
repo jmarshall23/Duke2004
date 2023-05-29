@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Classes">
+      <UniqueIdentifier>{ae101e94-0080-4666-ac0d-d529fab1ee4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\DamageType">
+      <UniqueIdentifier>{c077b087-0f1a-4321-9483-389670104089}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Projectiles">
+      <UniqueIdentifier>{c4454743-b39f-44c9-b839-715a3986c71a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Vehicles">
+      <UniqueIdentifier>{bd0f5520-8c14-4e0e-a404-c21b1d427d62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\VehicleFactories">
+      <UniqueIdentifier>{ae3ba248-875c-4a8e-9d54-e43d57bd5465}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\VehicleWeapons">
+      <UniqueIdentifier>{d6e359a4-75f5-4e38-945a-4cb8e7649133}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Classes\UTArmorPickup_BaseArmor.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTArmorPickup_ShieldBelt.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTArmorPickup_ThighPad.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTAttachment_RocketLauncher.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTAttachment_ShockRifle.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTBerserk.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTCTFBase_Content.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTCTFBlueFlag.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTCTFBlueFlagBase.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTCTFGame_Content.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTCTFMessage.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTCTFRedFlag.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTCTFRedFlagBase.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTDecoy.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTDroppedShieldBelt.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTGameCrowdAgent.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTGib_ScorpionHatch.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTJumpBootEffect.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTJumpBoots.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTPickupFactory_Berserk.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTPickupFactory_HealthPack.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTPickupFactory_JumpBoots.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTPickupFactory_SuperHealth.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTPickupFactory_UDamage.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTPowerupRewardMessage.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTTeamScoreMessage.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTTeleporter.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTUDamage.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTVehicleCTFGame_Content.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTVehicleShockComboLight.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTWeap_RocketLauncher_Content.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTWeap_ShockRifle.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTWeaponLocker_Content.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_CicadaLaser.uc">
+      <Filter>Classes\DamageType</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_CicadaRocket.uc">
+      <Filter>Classes\DamageType</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_Fire.uc">
+      <Filter>Classes\DamageType</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_MantaBolt.uc">
+      <Filter>Classes\DamageType</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_ScorpionBlade.uc">
+      <Filter>Classes\DamageType</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_ScorpionGlob.uc">
+      <Filter>Classes\DamageType</Filter>
+    </None>
+    <None Include="Classes\UTDmgType_ScorpionGlobRed.uc">
+      <Filter>Classes\DamageType</Filter>
+    </None>
+    <None Include="Classes\UTProj_CicadaRocket.uc">
+      <Filter>Classes\Projectiles</Filter>
+    </None>
+    <None Include="Classes\UTProj_MantaBolt.uc">
+      <Filter>Classes\Projectiles</Filter>
+    </None>
+    <None Include="Classes\UTProj_ScorpionGlob.uc">
+      <Filter>Classes\Projectiles</Filter>
+    </None>
+    <None Include="Classes\UTProj_ScorpionGlob_Red.uc">
+      <Filter>Classes\Projectiles</Filter>
+    </None>
+    <None Include="Classes\UTProj_ShockBall.uc">
+      <Filter>Classes\Projectiles</Filter>
+    </None>
+    <None Include="Classes\UTVehicle_Cicada_Content.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTVehicle_Hoverboard_Content.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTVehicle_Manta_Content.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTVehicle_Scorpion_Content.uc">
+      <Filter>Classes\Vehicles</Filter>
+    </None>
+    <None Include="Classes\UTVehicleFactory_Cicada.uc">
+      <Filter>Classes\VehicleFactories</Filter>
+    </None>
+    <None Include="Classes\UTVehicleFactory_Manta.uc">
+      <Filter>Classes\VehicleFactories</Filter>
+    </None>
+    <None Include="Classes\UTVehicleFactory_Scorpion.uc">
+      <Filter>Classes\VehicleFactories</Filter>
+    </None>
+    <None Include="Classes\UTVWeap_CicadaMissileLauncher.uc">
+      <Filter>Classes\VehicleWeapons</Filter>
+    </None>
+    <None Include="Classes\UTVWeap_CicadaTurret.uc">
+      <Filter>Classes\VehicleWeapons</Filter>
+    </None>
+    <None Include="Classes\UTVWeap_MantaGun.uc">
+      <Filter>Classes\VehicleWeapons</Filter>
+    </None>
+    <None Include="Classes\UTVWeap_ScorpionTurret.uc">
+      <Filter>Classes\VehicleWeapons</Filter>
+    </None>
+  </ItemGroup>
+</Project>

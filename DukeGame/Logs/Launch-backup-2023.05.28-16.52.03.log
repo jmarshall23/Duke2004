@@ -1,0 +1,60 @@
+Log: Log file open, 05/28/23 16:50:57
+Init: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+DevConfig: GConfig::LoadFile has loaded file:  ..\..\DukeGame\Config\DukeEditor.ini
+DevConfig: GConfig::LoadFile has loaded file:  ..\..\DukeGame\Config\DukeEditorUserSettings.ini
+DevConfig: GConfig::LoadFile has loaded file:  ..\..\DukeGame\Config\DukeSystemSettings.ini
+DevConfig: GConfig::LoadFile has loaded file:  ..\..\DukeGame\Config\DukeLightmass.ini
+DevConfig: GConfig::LoadFile has loaded file:  ..\..\DukeGame\Config\DukeEngine.ini
+DevConfig: GConfig::LoadFile has loaded file:  ..\..\DukeGame\Config\DukeGame.ini
+DevConfig: GConfig::LoadFile has loaded file:  ..\..\DukeGame\Config\DukeInput.ini
+DevConfig: GConfig::LoadFile has loaded file:  ..\..\DukeGame\Config\DukeUI.ini
+DevConfig: GConfig::Find has loaded file:  ..\..\Engine\Config\ConsoleVariables.ini
+Init: Version: 10897
+Init: Epic Internal: 0
+Init: Compiled (64-bit): May 28 2023 16:40:17
+Init: Changelist: 1532151
+Init: Command line: editor 
+Init: Base directory: D:\projects\Duke2004\Binaries\Win64\
+[0000.61] Init: Computer: JUSTIN-MAINPC
+[0000.61] Init: User: justi
+[0000.61] Init: CPU Page size=4096, Processors=32
+[0000.61] Init: High frequency timer resolution =10.000000 MHz
+[0000.61] Init: Memory total: Physical=63.1GB (63GB approx) Pagefile=75.6GB Virtual=131072.0GB
+[0000.61] DevStats: GSecondsPerCycle 1.000000e-007
+[0000.67] Init: WinSock: I am justin-mainpc (192.168.1.4:0)
+[0000.67] Init: Presizing for 0 objects not considered by GC, pre-allocating 0 bytes.
+[0000.67] Init: Object subsystem initialized
+[0000.67] DevSave: (System) 'Default__System' loading configuration from ..\..\DukeGame\Config\DukeEngine.ini
+[0000.67] DevSave:    Loading value for SeekFreePCPaths from [Core.System]
+[0000.67] DevSave:    Loading value for SeekFreePCExtensions from [Core.System]
+[0000.67] DevSave:    Loading value for CutdownPaths from [Core.System]
+[0000.67] DevSave:    Loading value for LocalizationPaths from [Core.System]
+[0000.67] DevSave:    Loading value for TextureFileCacheExtension from [Core.System]
+[0000.67] DevSave:    Loading value for Extensions from [Core.System]
+[0000.67] DevSave:    Loading value for Suppress from [Core.System]
+[0000.67] DevSave:    Loading value for FRScriptPaths from [Core.System]
+[0000.68] DevSave:    Loading value for ScriptPaths from [Core.System]
+[0000.68] DevSave:    Loading value for Paths from [Core.System]
+[0000.68] DevSave:    Loading value for CacheExt from [Core.System]
+[0000.68] DevSave:    Loading value for CachePath from [Core.System]
+[0000.68] DevSave:    Loading value for SavePath from [Core.System]
+[0000.68] DevSave:    Loading value for AsyncIOBandwidthLimit from [Core.System]
+[0000.68] DevSave:    Loading value for PackageSizeSoftLimit from [Core.System]
+[0000.68] DevSave:    Loading value for MaxOverallCacheSize from [Core.System]
+[0000.68] DevSave:    Loading value for MaxStaleCacheSize from [Core.System]
+[0000.68] DevSave:    Loading value for StaleCacheDays from [Core.System]
+[0000.69] DevDataBase: Connection to "Provider=sqloledb;Data Source=production-db;Initial Catalog=EngineTaskPerf;Trusted_Connection=Yes;Connection Timeout=2" or "10.1.20.20" failed
+[0000.70] Log: SystemSettings based on: SystemSettings
+[0001.03] Log: Found D3D11 adapter 0: NVIDIA GeForce RTX 4090
+[0001.03] Log: Adapter has 24156MB of dedicated video memory, 0MB of dedicated system memory, and 32331MB of shared system memory
+[0001.06] Log: Found D3D11 adapter 1: Microsoft Basic Render Driver
+[0001.06] Log: Adapter has 0MB of dedicated video memory, 0MB of dedicated system memory, and 32331MB of shared system memory
+[0001.10] Log: Shader platform (RHI): PC-D3D-SM3
+[0001.21] Log: PhysX GPU Support: DISABLED
+[0008.46] Exit: Preparing to exit.
+[0008.46] Exit: Object subsystem successfully closed.
+[0008.47] Log: Shutting down FaceFX...
+[0008.47] Log: FaceFX shutdown.
+[0008.49] DevDataBase: Spent 0.000597 seconds communicating with "Provider=sqloledb;Data Source=production-db;Initial Catalog=EngineTaskPerf;Trusted_Connection=Yes;Connection Timeout=2" or "10.1.20.20"
+[0008.49] Exit: Exiting.
+[0008.49] Log: Log file closed, 05/28/23 16:51:04
