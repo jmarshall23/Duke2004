@@ -111,10 +111,23 @@ public:
 	void DrawCrosshair();
 };
 
+struct DukePawn_eventUpdateEyeHeight_Parms
+{
+    FLOAT DeltaTime;
+    DukePawn_eventUpdateEyeHeight_Parms(EEventParm)
+    {
+    }
+};
 class ADukePawn : public AGamePawn
 {
 public:
     //## BEGIN PROPS DukePawn
+    FLOAT Bob;
+    FLOAT LandBob;
+    FLOAT JumpBob;
+    FLOAT AppliedBob;
+    FLOAT bobtime;
+    FVector WalkBob;
     //## END PROPS DukePawn
 
     virtual void AddDefaultInventory();
@@ -123,10 +136,25 @@ public:
         P_FINISH;
         this->AddDefaultInventory();
     }
+    void eventUpdateEyeHeight(FLOAT DeltaTime)
+    {
+        DukePawn_eventUpdateEyeHeight_Parms Parms(EC_EventParm);
+        if(IsProbing(NAME_UpdateEyeHeight)) {
+        Parms.DeltaTime=DeltaTime;
+        ProcessEvent(FindFunctionChecked(DUKEGAME_UpdateEyeHeight),&Parms);
+        }
+    }
     DECLARE_CLASS(ADukePawn,AGamePawn,0|CLASS_Config,DukeGame)
-    NO_DEFAULT_CONSTRUCTOR(ADukePawn)
+	virtual void TickSpecial( FLOAT DeltaSeconds );
 };
 
+struct DukeWeapon_eventSetPosition_Parms
+{
+    class ADukePawn* Holder;
+    DukeWeapon_eventSetPosition_Parms(EEventParm)
+    {
+    }
+};
 class ADukeWeapon : public AWeapon
 {
 public:
@@ -134,10 +162,39 @@ public:
     INT AmmoCount;
     INT MaxAmmoCount;
     FLOAT InventoryWeight;
+    BITFIELD bForceHidden:1;
+    BITFIELD bPendingShow:1;
+    SCRIPT_ALIGN;
+    FVector PlayerViewOffset;
+    FVector SmallWeaponsOffset;
+    FLOAT WideScreenOffsetScaling;
+    FRotator WidescreenRotationOffset;
+    FVector HiddenWeaponsOffset;
+    FLOAT ProjectileSpawnOffset;
+    FLOAT BobDamping;
+    FLOAT JumpDamping;
+    TArrayNoInit<FName> WeaponIdleAnims;
+    TArrayNoInit<FName> WeaponFireAnim;
     //## END PROPS DukeWeapon
 
+    void eventSetPosition(class ADukePawn* Holder)
+    {
+        DukeWeapon_eventSetPosition_Parms Parms(EC_EventParm);
+        Parms.Holder=Holder;
+        ProcessEvent(FindFunctionChecked(DUKEGAME_SetPosition),&Parms);
+    }
     DECLARE_CLASS(ADukeWeapon,AWeapon,0|CLASS_Config,DukeGame)
     NO_DEFAULT_CONSTRUCTOR(ADukeWeapon)
+};
+
+class AWeaponPistol : public ADukeWeapon
+{
+public:
+    //## BEGIN PROPS WeaponPistol
+    //## END PROPS WeaponPistol
+
+    DECLARE_CLASS(AWeaponPistol,ADukeWeapon,0|CLASS_Config,DukeGame)
+    NO_DEFAULT_CONSTRUCTOR(AWeaponPistol)
 };
 
 #undef DECLARE_CLASS
@@ -166,6 +223,7 @@ AUTOGENERATE_FUNCTION(ADukePawn,-1,execAddDefaultInventory);
 	ADukePawn::StaticClass(); \
 	GNativeLookupFuncs.Set(FName("DukePawn"), GDukeGameADukePawnNatives); \
 	ADukeWeapon::StaticClass(); \
+	AWeaponPistol::StaticClass(); \
 
 #endif // DUKEGAME_NATIVE_DEFS
 
@@ -191,10 +249,13 @@ FNativeFunctionLookup GDukeGameADukePawnNatives[] =
 VERIFY_CLASS_OFFSET_NODIE(ADukeHUD,DukeHUD,Opacity)
 VERIFY_CLASS_OFFSET_NODIE(ADukeHUD,DukeHUD,NumberCircleTexture)
 VERIFY_CLASS_SIZE_NODIE(ADukeHUD)
+VERIFY_CLASS_OFFSET_NODIE(ADukePawn,DukePawn,Bob)
+VERIFY_CLASS_OFFSET_NODIE(ADukePawn,DukePawn,WalkBob)
 VERIFY_CLASS_SIZE_NODIE(ADukePawn)
 VERIFY_CLASS_OFFSET_NODIE(ADukeWeapon,DukeWeapon,AmmoCount)
-VERIFY_CLASS_OFFSET_NODIE(ADukeWeapon,DukeWeapon,InventoryWeight)
+VERIFY_CLASS_OFFSET_NODIE(ADukeWeapon,DukeWeapon,WeaponFireAnim)
 VERIFY_CLASS_SIZE_NODIE(ADukeWeapon)
+VERIFY_CLASS_SIZE_NODIE(AWeaponPistol)
 #endif // VERIFY_CLASS_SIZES
 #endif // !ENUMS_ONLY
 

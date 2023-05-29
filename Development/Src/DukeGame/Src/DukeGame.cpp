@@ -71,7 +71,7 @@ void AutoGenerateNamesDukeGame()
 {
 	#define NAMES_ONLY
     #define AUTOGENERATE_NAME(name) DUKEGAME_##name = FName(TEXT(#name));
-//		#include "ExampleGameNames.h"
+	#include "DukeGameNames.h"
 	#undef AUTOGENERATE_NAME
 
 	#define AUTOGENERATE_FUNCTION(cls,idx,name)

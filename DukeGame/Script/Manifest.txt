@@ -146,6 +146,7 @@
    3 DukeInventory DukeGame [A] []
    3 Weapon Engine [A] []
     4 DukeWeapon DukeGame [] []
+     5 WeaponPistol DukeGame [] []
   2 InventoryManager Engine [] []
    3 DukeInventoryManager DukeGame [] []
   2 KAsset Engine [P] [Physics]
