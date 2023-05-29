@@ -1887,7 +1887,7 @@ void FEditorFileUtils::NewMapInteractive()
 		{
 			// New map screen returned a non-empty TemplateName, so the user has selected to begin from a template map
 			UBOOL TemplateFound = FALSE;
-			const FString& Ext = TEXT(".umap");
+			const FString& Ext = TEXT(".dnfmap");
 
 			// Search all template map folders for a match with TemplateName
 			for (INT folderIdx = 0; folderIdx < GEditor->TemplateMapFolders.Num(); folderIdx++)
