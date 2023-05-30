@@ -18,6 +18,19 @@
 #ifndef INCLUDED_DUKEGAME_ENUMS
 #define INCLUDED_DUKEGAME_ENUMS 1
 
+enum EWeaponState
+{
+    WEAPON_STATE_NONE       =0,
+    WEAPON_STATE_IDLE       =1,
+    WEAPON_STATE_FIRING     =2,
+    WEAPON_STATE_RELOAD     =3,
+    WEAPON_STATE_MAX        =4,
+};
+#define FOREACH_ENUM_EWEAPONSTATE(op) \
+    op(WEAPON_STATE_NONE) \
+    op(WEAPON_STATE_IDLE) \
+    op(WEAPON_STATE_FIRING) \
+    op(WEAPON_STATE_RELOAD) 
 enum EIntelligence
 {
     BRAINS_NONE             =0,
@@ -68,6 +81,20 @@ enum EAttitude
 #define ENABLE_DECLARECLASS_MACRO 1
 #include "UnObjBas.h"
 #undef ENABLE_DECLARECLASS_MACRO
+
+class UAnimNotify_SetWeaponState : public UAnimNotify
+{
+public:
+    //## BEGIN PROPS AnimNotify_SetWeaponState
+    MS_ALIGN(4) BYTE newWeaponState GCC_ALIGN(4); // Extra alignment flags needed because all properties are bytes
+    SCRIPT_ALIGN;
+    //## END PROPS AnimNotify_SetWeaponState
+
+    DECLARE_CLASS(UAnimNotify_SetWeaponState,UAnimNotify,0,DukeGame)
+	// AnimNotify interface.
+	virtual void Notify( class UAnimNodeSequence* NodeSeq );
+	virtual FString GetEditorComment() { return TEXT("WeaponState"); }
+};
 
 class ADukeHUD : public AHUD
 {
@@ -208,8 +235,17 @@ public:
     FLOAT JumpDamping;
     TArrayNoInit<FName> WeaponIdleAnims;
     TArrayNoInit<FName> WeaponFireAnim;
+    BYTE weaponState;
+    SCRIPT_ALIGN;
     //## END PROPS DukeWeapon
 
+    virtual void BeginFire(BYTE FireModeNum);
+    DECLARE_FUNCTION(execBeginFire)
+    {
+        P_GET_BYTE(FireModeNum);
+        P_FINISH;
+        this->BeginFire(FireModeNum);
+    }
     void eventSetPosition(class ADukePawn* Holder)
     {
         DukeWeapon_eventSetPosition_Parms Parms(EC_EventParm);
@@ -397,6 +433,7 @@ AUTOGENERATE_FUNCTION(ADukeHUD,-1,execDrawScaledTexture);
 AUTOGENERATE_FUNCTION(ADukeHUD,-1,execRenderHud);
 AUTOGENERATE_FUNCTION(ADukeHUD,-1,execHudStartup);
 AUTOGENERATE_FUNCTION(ADukePawn,-1,execAddDefaultInventory);
+AUTOGENERATE_FUNCTION(ADukeWeapon,-1,execBeginFire);
 
 #ifndef NAMES_ONLY
 #undef AUTOGENERATE_FUNCTION
@@ -407,11 +444,13 @@ AUTOGENERATE_FUNCTION(ADukePawn,-1,execAddDefaultInventory);
 #define DUKEGAME_NATIVE_DEFS
 
 #define AUTO_INITIALIZE_REGISTRANTS_DUKEGAME \
+	UAnimNotify_SetWeaponState::StaticClass(); \
 	ADukeHUD::StaticClass(); \
 	GNativeLookupFuncs.Set(FName("DukeHUD"), GDukeGameADukeHUDNatives); \
 	ADukePawn::StaticClass(); \
 	GNativeLookupFuncs.Set(FName("DukePawn"), GDukeGameADukePawnNatives); \
 	ADukeWeapon::StaticClass(); \
+	GNativeLookupFuncs.Set(FName("DukeWeapon"), GDukeGameADukeWeaponNatives); \
 	AWeaponPistol::StaticClass(); \
 	AHumanNPC::StaticClass(); \
 
@@ -432,10 +471,18 @@ FNativeFunctionLookup GDukeGameADukePawnNatives[] =
 	{NULL, NULL}
 };
 
+FNativeFunctionLookup GDukeGameADukeWeaponNatives[] = 
+{ 
+	MAP_NATIVE(ADukeWeapon, execBeginFire)
+	{NULL, NULL}
+};
+
 #endif // NATIVES_ONLY
 #endif // STATIC_LINKING_MOJO
 
 #ifdef VERIFY_CLASS_SIZES
+VERIFY_CLASS_OFFSET_NODIE(UAnimNotify_SetWeaponState,AnimNotify_SetWeaponState,newWeaponState)
+VERIFY_CLASS_SIZE_NODIE(UAnimNotify_SetWeaponState)
 VERIFY_CLASS_OFFSET_NODIE(ADukeHUD,DukeHUD,Opacity)
 VERIFY_CLASS_OFFSET_NODIE(ADukeHUD,DukeHUD,NumberCircleTexture)
 VERIFY_CLASS_SIZE_NODIE(ADukeHUD)
@@ -443,7 +490,7 @@ VERIFY_CLASS_OFFSET_NODIE(ADukePawn,DukePawn,Bob)
 VERIFY_CLASS_OFFSET_NODIE(ADukePawn,DukePawn,WalkBob)
 VERIFY_CLASS_SIZE_NODIE(ADukePawn)
 VERIFY_CLASS_OFFSET_NODIE(ADukeWeapon,DukeWeapon,AmmoCount)
-VERIFY_CLASS_OFFSET_NODIE(ADukeWeapon,DukeWeapon,WeaponFireAnim)
+VERIFY_CLASS_OFFSET_NODIE(ADukeWeapon,DukeWeapon,weaponState)
 VERIFY_CLASS_SIZE_NODIE(ADukeWeapon)
 VERIFY_CLASS_SIZE_NODIE(AWeaponPistol)
 VERIFY_CLASS_OFFSET_NODIE(AHumanNPC,HumanNPC,Skill)

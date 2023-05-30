@@ -37,7 +37,7 @@ namespace UnrealBuildTool
 		/** Returns true if the game wants to have PC ES2 simulator (ie ES2 Dynamic RHI) enabled */
 		public bool ShouldCompileES2()
 		{
-			return true;
+			return false;
 		}
 
         /** Returns whether PhysX should be compiled on mobile platforms */

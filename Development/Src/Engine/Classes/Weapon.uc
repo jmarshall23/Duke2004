@@ -554,7 +554,7 @@ simulated function AnimNodeSequence GetWeaponAnimNodeSeq()
  * @param	Anim Sequence to play on weapon skeletal mesh
  * @param	desired duration, in seconds, animation should be played
  */
-simulated function PlayWeaponAnimation( Name Sequence, float fDesiredDuration, optional bool bLoop, optional SkeletalMeshComponent SkelMesh)
+event PlayWeaponAnimation( Name Sequence, float fDesiredDuration, optional bool bLoop, optional SkeletalMeshComponent SkelMesh)
 {
 	local AnimNodeSequence WeapNode;
 	local AnimTree Tree;

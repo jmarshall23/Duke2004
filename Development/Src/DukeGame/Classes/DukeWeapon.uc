@@ -40,6 +40,8 @@ var float JumpDamping;
 var(Animations) array<name> WeaponIdleAnims;
 var(Animations)	array<name>	WeaponFireAnim;
 
+var EWeaponState weaponState;
+
 simulated function PostBeginPlay()
 {
 	Super.PostBeginPlay();
@@ -67,8 +69,10 @@ simulated function bool ShouldSwitchTo(DukeWeapon InWeapon)
  */
 simulated function bool bReadyToFire()
 {
-	return true;
+	return weaponState == WEAPON_STATE_IDLE;
 }
+
+native simulated function BeginFire(Byte FireModeNum);
 
 simulated function Loaded(optional bool bUseWeaponMax)
 {
@@ -244,6 +248,8 @@ simulated function TimeWeaponEquipping()
 	AttachWeaponTo( Instigator.Mesh );
 
 	PlayWeaponAnimation(WeaponIdleAnims[0], 0.0, true);
+
+	weaponState = WEAPON_STATE_IDLE;
 }
 
 simulated state Active
@@ -322,4 +328,6 @@ defaultproperties
 	bForceHidden=FALSE
 	BobDamping=0.85000
 	JumpDamping=1.0
+
+	weaponState=WEAPON_STATE_NONE
 }

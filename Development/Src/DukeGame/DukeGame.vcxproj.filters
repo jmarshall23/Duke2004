@@ -174,6 +174,9 @@
     <None Include="Classes\HumanNPC.uc">
       <Filter>Classes</Filter>
     </None>
+    <None Include="Classes\AnimNotify_SetWeaponState.uc">
+      <Filter>Classes</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\NullSurveys.cpp">
@@ -195,6 +198,9 @@
       <Filter>Src</Filter>
     </ClCompile>
     <ClCompile Include="Src\HumanNPC.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\AnimNotify_SetWeaponState.cpp">
       <Filter>Src</Filter>
     </ClCompile>
   </ItemGroup>

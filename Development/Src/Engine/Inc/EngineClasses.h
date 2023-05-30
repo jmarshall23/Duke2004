@@ -11900,6 +11900,16 @@ struct Weapon_eventGetTraceRange_Parms
     {
     }
 };
+struct Weapon_eventPlayWeaponAnimation_Parms
+{
+    FName Sequence;
+    FLOAT fDesiredDuration;
+    UBOOL bLoop;
+    class USkeletalMeshComponent* SkelMesh;
+    Weapon_eventPlayWeaponAnimation_Parms(EEventParm)
+    {
+    }
+};
 struct Weapon_eventIsFiring_Parms
 {
     UBOOL ReturnValue;
@@ -11967,6 +11977,15 @@ public:
         Parms.ReturnValue=0;
         ProcessEvent(FindFunctionChecked(ENGINE_GetTraceRange),&Parms);
         return Parms.ReturnValue;
+    }
+    void eventPlayWeaponAnimation(FName Sequence,FLOAT fDesiredDuration,UBOOL bLoop=FALSE,class USkeletalMeshComponent* SkelMesh=NULL)
+    {
+        Weapon_eventPlayWeaponAnimation_Parms Parms(EC_EventParm);
+        Parms.Sequence=Sequence;
+        Parms.fDesiredDuration=fDesiredDuration;
+        Parms.bLoop=bLoop ? FIRST_BITFIELD : FALSE;
+        Parms.SkelMesh=SkelMesh;
+        ProcessEvent(FindFunctionChecked(ENGINE_PlayWeaponAnimation),&Parms);
     }
     UBOOL eventIsFiring()
     {
