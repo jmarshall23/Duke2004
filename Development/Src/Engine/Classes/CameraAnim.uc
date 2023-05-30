@@ -45,7 +45,7 @@ public:
 defaultproperties
 {
 	AnimLength=3.f
-	BaseFOV=90
+	BaseFOV=95
 
 	BasePPSettingsAlpha=1.f
 

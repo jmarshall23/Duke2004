@@ -88,6 +88,7 @@
     <None Include="Classes\DukePawn.uc" />
     <None Include="Classes\DukePlayerController.uc" />
     <None Include="Classes\DukeWeapon.uc" />
+    <None Include="Classes\HumanNPC.uc" />
     <None Include="Classes\WeaponPistol.uc" />
     <None Include="Live\ExampleGame.PNG" />
     <None Include="Live\ExampleGame.spa" />
@@ -119,6 +120,7 @@
     <ClCompile Include="Src\DukePawn.cpp" />
     <ClCompile Include="Src\DukePistol.cpp" />
     <ClCompile Include="Src\DukeWeapon.cpp" />
+    <ClCompile Include="Src\HumanNPC.cpp" />
     <ClCompile Include="Src\NullSurveys.cpp" />
   </ItemGroup>
   <ItemGroup>

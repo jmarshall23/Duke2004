@@ -171,6 +171,9 @@
     <None Include="Classes\WeaponPistol.uc">
       <Filter>Classes</Filter>
     </None>
+    <None Include="Classes\HumanNPC.uc">
+      <Filter>Classes</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\NullSurveys.cpp">
@@ -189,6 +192,9 @@
       <Filter>Src</Filter>
     </ClCompile>
     <ClCompile Include="Src\DukePistol.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\HumanNPC.cpp">
       <Filter>Src</Filter>
     </ClCompile>
   </ItemGroup>

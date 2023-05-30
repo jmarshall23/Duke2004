@@ -958,7 +958,7 @@ simulated native function StopCameraAnim(CameraAnimInst AnimInst, optional bool 
 
 defaultproperties
 {
-	DefaultFOV=90.f
+	DefaultFOV=95.f
 	DefaultAspectRatio=AspectRatio4x3
 	bHidden=TRUE
 	RemoteRole=ROLE_None

@@ -88,7 +88,7 @@ defaultproperties
 {
 	Physics=PHYS_Interpolating
 
-	FOVAngle=90.0
+	FOVAngle=95.0
 	bConstrainAspectRatio=TRUE
 	AspectRatio=AspectRatio16x9
 

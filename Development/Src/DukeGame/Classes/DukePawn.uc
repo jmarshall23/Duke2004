@@ -13,6 +13,7 @@ var					vector	WalkBob;
 cpptext
 {
 	virtual void TickSpecial( FLOAT DeltaSeconds );
+	virtual void UpdateEyeHeight(FLOAT DeltaSeconds);
 }
 
 simulated function float GetEyeHeight()

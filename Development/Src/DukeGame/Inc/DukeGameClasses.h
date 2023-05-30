@@ -18,6 +18,38 @@
 #ifndef INCLUDED_DUKEGAME_ENUMS
 #define INCLUDED_DUKEGAME_ENUMS 1
 
+enum EIntelligence
+{
+    BRAINS_NONE             =0,
+    BRAINS_REPTILE          =1,
+    BRAINS_MAMMAL           =2,
+    BRAINS_HUMAN            =3,
+    BRAINS_MAX              =4,
+};
+#define FOREACH_ENUM_EINTELLIGENCE(op) \
+    op(BRAINS_NONE) \
+    op(BRAINS_REPTILE) \
+    op(BRAINS_MAMMAL) \
+    op(BRAINS_HUMAN) 
+enum EAttitude
+{
+    ATTITUDE_Fear           =0,
+    ATTITUDE_Hate           =1,
+    ATTITUDE_Frenzy         =2,
+    ATTITUDE_Threaten       =3,
+    ATTITUDE_Ignore         =4,
+    ATTITUDE_Friendly       =5,
+    ATTITUDE_Follow         =6,
+    ATTITUDE_MAX            =7,
+};
+#define FOREACH_ENUM_EATTITUDE(op) \
+    op(ATTITUDE_Fear) \
+    op(ATTITUDE_Hate) \
+    op(ATTITUDE_Frenzy) \
+    op(ATTITUDE_Threaten) \
+    op(ATTITUDE_Ignore) \
+    op(ATTITUDE_Friendly) \
+    op(ATTITUDE_Follow) 
 
 #endif // !INCLUDED_DUKEGAME_ENUMS
 #endif // !NO_ENUMS
@@ -146,6 +178,7 @@ public:
     }
     DECLARE_CLASS(ADukePawn,AGamePawn,0|CLASS_Config,DukeGame)
 	virtual void TickSpecial( FLOAT DeltaSeconds );
+	virtual void UpdateEyeHeight(FLOAT DeltaSeconds);
 };
 
 struct DukeWeapon_eventSetPosition_Parms
@@ -197,6 +230,162 @@ public:
     NO_DEFAULT_CONSTRUCTOR(AWeaponPistol)
 };
 
+struct FSNPCAnimEvent
+{
+    BITFIELD bEnabled:1;
+    FName TriggerEvent;
+    FLOAT SoundVolume;
+
+    /** Constructors */
+    FSNPCAnimEvent() {}
+    FSNPCAnimEvent(EEventParm)
+    {
+        appMemzero(this, sizeof(FSNPCAnimEvent));
+    }
+};
+
+struct HumanNPC_eventPlayAnim_Parms
+{
+    FName AnimName;
+    FLOAT Duration;
+    UBOOL bLoop;
+    UBOOL bRestartIfAlreadyPlaying;
+    FLOAT StartTime;
+    UBOOL bPlayBackwards;
+    HumanNPC_eventPlayAnim_Parms(EEventParm)
+    {
+    }
+};
+struct HumanNPC_eventSeeFocalPoint_Parms
+{
+    class AActor* PointSeen;
+    HumanNPC_eventSeeFocalPoint_Parms(EEventParm)
+    {
+    }
+};
+class AHumanNPC : public AGamePawn
+{
+public:
+    //## BEGIN PROPS HumanNPC
+    FLOAT Skill;
+    BITFIELD bSnatched:1;
+    BITFIELD bFixedEnemy:1;
+    BITFIELD bRotateToEnemy:1;
+    BITFIELD bFromWall:1;
+    BITFIELD bHunting:1;
+    BITFIELD bJumpOffPawn:1;
+    BITFIELD bShootSpecial:1;
+    BITFIELD bAdvancedTactics:1;
+    BITFIELD bPlayerCanSeeMe:1;
+    BITFIELD bMuffledHearing:1;
+    BITFIELD bNoHeightMod:1;
+    BITFIELD bNoRotConstraint:1;
+    BITFIELD bCanStrafe:1;
+    BITFIELD bCanJump:1;
+    BITFIELD bCanWalk:1;
+    BITFIELD bCanSwim:1;
+    BITFIELD bCanFly:1;
+    BITFIELD bCanOpenDoors:1;
+    BITFIELD bCanDoSpecial:1;
+    BITFIELD bPanicking:1;
+    BITFIELD bWeaponNoAnimSound:1;
+    BITFIELD bFlyingVehicle:1;
+    BITFIELD bAlwaysUseTentacles:1;
+    BITFIELD bCanHaveCash:1;
+    BITFIELD bAggressiveToPlayer:1;
+    BITFIELD bVisiblySnatched:1;
+    BITFIELD bPatrolled:1;
+    BITFIELD bFollowEventOnceOnly:1;
+    BITFIELD bHateWhenSnatched:1;
+    BITFIELD bFire:1;
+    BITFIELD bForcedAttack:1;
+    BITFIELD bShielded:1;
+    BITFIELD bCamping:1;
+    BITFIELD bFocusOnPlayer:1;
+    BITFIELD bCanBeUsed:1;
+    BITFIELD bDisableUseTrigEvent:1;
+    BITFIELD bFollowEventDisabled:1;
+    BITFIELD bSnatchedAtStartup:1;
+    BITFIELD bSleeping:1;
+    BITFIELD bEyeless:1;
+    BITFIELD bLegless:1;
+    BITFIELD bCanHeadTrack:1;
+    BITFIELD bCanTorsoTrack:1;
+    BITFIELD bReadyToAttack:1;
+    BITFIELD bSawEnemy:1;
+    BITFIELD bEMPed:1;
+    class AActor* Enemy;
+    FLOAT MeleeRange;
+    FVector LastSeenPos;
+    FVector LastSeeingPos;
+    FLOAT LastSeenTime;
+    FLOAT CombatStyle;
+    FLOAT Alertness;
+    FName NextState;
+    FName NextLabel;
+    FLOAT HearThroughWallDist;
+    BYTE AttitudeToPlayer;
+    BYTE Intelligence;
+    BYTE Visibility;
+    FLOAT HearingThreshold;
+    FVector noise1spot;
+    FLOAT noise1time;
+    FLOAT noise1loudness;
+    FVector noise2spot;
+    FLOAT noise2time;
+    FLOAT noise2loudness;
+    FLOAT SightRadius;
+    FLOAT PeripheralVision;
+    FLOAT SightCounter;
+    INT EgoKillValue;
+    FStringNoInit CharacterName;
+    FName InitialIdlingAnim;
+    FName InitialTopIdlingAnim;
+    FLOAT RunSpeed;
+    FName HateTag;
+    FLOAT AggroSnatchDistance;
+    FName PatrolTag;
+    FName FollowEvent;
+    FLOAT AIMeleeRange;
+    FName ControlTag;
+    FName CoverTag;
+    FName PendingTopAnimation;
+    FName PendingBottomAnimation;
+    FName PendingAllAnimation;
+    FName PendingFocusTag;
+    class AActor* MyGiveItem;
+    class AActor* AEDestination;
+    class AActor* PendingTriggerActor;
+    class AActor* Obstruction;
+    FLOAT WalkingSpeed;
+    class AActor* PendingDoor;
+    class AActor* OrderObject;
+    struct FSNPCAnimEvent NPCAnimEvent[15];
+    class AActor* SuspiciousActor;
+    FVector WanderDir;
+    //## END PROPS HumanNPC
+
+    void eventPlayAnim(FName AnimName,FLOAT Duration=0,UBOOL bLoop=FALSE,UBOOL bRestartIfAlreadyPlaying=TRUE,FLOAT StartTime=0.000000,UBOOL bPlayBackwards=FALSE)
+    {
+        HumanNPC_eventPlayAnim_Parms Parms(EC_EventParm);
+        Parms.AnimName=AnimName;
+        Parms.Duration=Duration;
+        Parms.bLoop=bLoop ? FIRST_BITFIELD : FALSE;
+        Parms.bRestartIfAlreadyPlaying=bRestartIfAlreadyPlaying ? FIRST_BITFIELD : FALSE;
+        Parms.StartTime=StartTime;
+        Parms.bPlayBackwards=bPlayBackwards ? FIRST_BITFIELD : FALSE;
+        ProcessEvent(FindFunctionChecked(DUKEGAME_PlayAnim),&Parms);
+    }
+    void eventSeeFocalPoint(class AActor* PointSeen)
+    {
+        HumanNPC_eventSeeFocalPoint_Parms Parms(EC_EventParm);
+        Parms.PointSeen=PointSeen;
+        ProcessEvent(FindFunctionChecked(DUKEGAME_SeeFocalPoint),&Parms);
+    }
+    DECLARE_CLASS(AHumanNPC,AGamePawn,0|CLASS_Config,DukeGame)
+	virtual void PostBeginPlay();
+};
+
 #undef DECLARE_CLASS
 #undef DECLARE_CASTED_CLASS
 #undef DECLARE_ABSTRACT_CLASS
@@ -224,6 +413,7 @@ AUTOGENERATE_FUNCTION(ADukePawn,-1,execAddDefaultInventory);
 	GNativeLookupFuncs.Set(FName("DukePawn"), GDukeGameADukePawnNatives); \
 	ADukeWeapon::StaticClass(); \
 	AWeaponPistol::StaticClass(); \
+	AHumanNPC::StaticClass(); \
 
 #endif // DUKEGAME_NATIVE_DEFS
 
@@ -256,6 +446,9 @@ VERIFY_CLASS_OFFSET_NODIE(ADukeWeapon,DukeWeapon,AmmoCount)
 VERIFY_CLASS_OFFSET_NODIE(ADukeWeapon,DukeWeapon,WeaponFireAnim)
 VERIFY_CLASS_SIZE_NODIE(ADukeWeapon)
 VERIFY_CLASS_SIZE_NODIE(AWeaponPistol)
+VERIFY_CLASS_OFFSET_NODIE(AHumanNPC,HumanNPC,Skill)
+VERIFY_CLASS_OFFSET_NODIE(AHumanNPC,HumanNPC,WanderDir)
+VERIFY_CLASS_SIZE_NODIE(AHumanNPC)
 #endif // VERIFY_CLASS_SIZES
 #endif // !ENUMS_ONLY
 

@@ -15,3 +15,10 @@ var EWeaponHand	WeaponHand;
 /** current offsets applied to the camera due to camera anims, etc */
 var vector ShakeOffset; // current magnitude to offset camera position from shake
 var rotator ShakeRot; // current magnitude to offset camera rotation from shake
+
+defaultproperties
+{
+	FOVAngle=95.000000
+	DesiredFOV=95.000000
+	DefaultFOV=95.000000
+}
