@@ -1454,10 +1454,10 @@ FString WxEditorFrame::GetLocalizedCaption(FString levelName)
 {
 	if(levelName == TEXT(""))
 	{
-		return FString::Printf(TEXT("Duke's Enormous Tool"));
+		return FString::Printf(TEXT("Duke's Enormous Tool 2004"));
 	}
 
-	return FString::Printf(TEXT("Duke's Enormous Tool: %s"), *levelName);
+	return FString::Printf(TEXT("Duke's Enormous Tool 2004: %s"), *levelName);
 }
 
 WxEditorFrame::~WxEditorFrame()

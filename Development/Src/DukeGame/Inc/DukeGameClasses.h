@@ -266,42 +266,38 @@ public:
 	void DrawCrosshair();
 };
 
-struct DukePawn_eventUpdateEyeHeight_Parms
-{
-    FLOAT DeltaTime;
-    DukePawn_eventUpdateEyeHeight_Parms(EEventParm)
-    {
-    }
-};
 class ADukePawn : public AGamePawn
 {
 public:
     //## BEGIN PROPS DukePawn
     FLOAT Bob;
     FLOAT LandBob;
-    FLOAT JumpBob;
     FLOAT AppliedBob;
-    FLOAT bobtime;
+    FLOAT BobTime;
     FVector WalkBob;
     //## END PROPS DukePawn
 
+    virtual FVector GetPawnViewLocation();
+    virtual UBOOL CalcCamera(FLOAT fDeltaTime,FVector& out_CamLoc,FRotator& out_CamRot,FLOAT& out_FOV);
     virtual void AddDefaultInventory();
+    DECLARE_FUNCTION(execCalcCamera)
+    {
+        P_GET_FLOAT(fDeltaTime);
+        P_GET_STRUCT_REF(FVector,out_CamLoc);
+        P_GET_STRUCT_REF(FRotator,out_CamRot);
+        P_GET_FLOAT_REF(out_FOV);
+        P_FINISH;
+        *(UBOOL*)Result=this->CalcCamera(fDeltaTime,out_CamLoc,out_CamRot,out_FOV);
+    }
     DECLARE_FUNCTION(execAddDefaultInventory)
     {
         P_FINISH;
         this->AddDefaultInventory();
     }
-    void eventUpdateEyeHeight(FLOAT DeltaTime)
-    {
-        DukePawn_eventUpdateEyeHeight_Parms Parms(EC_EventParm);
-        if(IsProbing(NAME_UpdateEyeHeight)) {
-        Parms.DeltaTime=DeltaTime;
-        ProcessEvent(FindFunctionChecked(DUKEGAME_UpdateEyeHeight),&Parms);
-        }
-    }
     DECLARE_CLASS(ADukePawn,AGamePawn,0|CLASS_Config,DukeGame)
-	virtual void TickSpecial( FLOAT DeltaSeconds );
-	virtual void UpdateEyeHeight(FLOAT DeltaSeconds);
+	void CheckBob(float DeltaTime, float Speed2D, FVector Y);
+
+	virtual void TickSpecial( FLOAT DeltaSeconds );	
 };
 
 struct DukeWeapon_eventSetPosition_Parms
@@ -541,6 +537,8 @@ AUTOGENERATE_FUNCTION(ADukeHUD,-1,execDrawScaledTexture);
 AUTOGENERATE_FUNCTION(ADukeHUD,-1,execRenderHud);
 AUTOGENERATE_FUNCTION(ADukeHUD,-1,execHudStartup);
 AUTOGENERATE_FUNCTION(ADukePawn,-1,execAddDefaultInventory);
+AUTOGENERATE_FUNCTION(ADukePawn,-1,execCalcCamera);
+AUTOGENERATE_FUNCTION(ADukePawn,-1,execGetPawnViewLocation);
 AUTOGENERATE_FUNCTION(ADukeWeapon,-1,execBeginFire);
 AUTOGENERATE_FUNCTION(ADukeWeapon,-1,execResetToIdle);
 
@@ -591,6 +589,8 @@ FNativeFunctionLookup GDukeGameADukeHUDNatives[] =
 FNativeFunctionLookup GDukeGameADukePawnNatives[] = 
 { 
 	MAP_NATIVE(ADukePawn, execAddDefaultInventory)
+	MAP_NATIVE(ADukePawn, execCalcCamera)
+	MAP_NATIVE(ADukePawn, execGetPawnViewLocation)
 	{NULL, NULL}
 };
 

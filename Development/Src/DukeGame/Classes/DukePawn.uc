@@ -3,17 +3,17 @@ class DukePawn extends GamePawn
 	config(Game);
 
 /** view bob properties */
-var	globalconfig	float	Bob;
-var					float	LandBob;
-var					float	JumpBob;
-var					float	AppliedBob;
-var					float	bobtime;
+var	float			Bob;
+var float			LandBob;
+var float			AppliedBob;
+var float			BobTime;
 var					vector	WalkBob;
 
 cpptext
 {
-	virtual void TickSpecial( FLOAT DeltaSeconds );
-	virtual void UpdateEyeHeight(FLOAT DeltaSeconds);
+	void CheckBob(float DeltaTime, float Speed2D, FVector Y);
+
+	virtual void TickSpecial( FLOAT DeltaSeconds );	
 }
 
 simulated function float GetEyeHeight()
@@ -35,131 +35,17 @@ simulated function vector WeaponBob(float BobDamping, float JumpDamping)
 
 	WBob = BobDamping * WalkBob;
 	WBob.Z = (0.45 + 0.55 * BobDamping)*WalkBob.Z;	
-	WBob.Z += JumpDamping *(LandBob - JumpBob);
+	//WBob.Z += JumpDamping *(LandBob - JumpBob);
 	return WBob;
 }
 
-/* UpdateEyeHeight()
-* Update player eye position, based on smoothing view while moving up and down stairs, and adding view bobs for landing and taking steps.
-* Called every tick only if bUpdateEyeHeight==true.
-*/
-event UpdateEyeHeight( float DeltaTime )
-{
-	local float smooth, MaxEyeHeight, OldEyeHeight, Speed2D, OldBobTime;
-	local Actor HitActor;
-	local vector HitLocation,HitNormal, X, Y, Z;
-	local int m,n;
-	local float OldZ;
-
-	OldZ = Location.Z; // hack
-
-	if ( bTearOff )
-	{
-		// no eyeheight updates if dead
-		EyeHeight = Default.BaseEyeheight;
-		return;
-	}
-
-	// normal walking around
-	// smooth eye position changes while going up/down stairs
-	smooth = FMin(0.9, 10.0 * DeltaTime/CustomTimeDilation);
-	LandBob *= (1 - smooth);
-	if( Physics == PHYS_Walking || Physics==PHYS_Spider || Controller.IsInState('PlayerSwimming') )
-	{
-		OldEyeHeight = EyeHeight;
-		EyeHeight = FMax((EyeHeight - Location.Z + OldZ) * (1 - smooth) + BaseEyeHeight * smooth,
-							-0.5 * CylinderComponent.CollisionHeight);
-	}
-	else
-	{
-		EyeHeight = EyeHeight * ( 1 - smooth) + BaseEyeHeight * smooth;
-	}
-	
-
-	// don't bob if disabled, or just landed
-/*
-	if( bJustLanded )
-	{
-		BobTime = 0;
-		WalkBob = Vect(0,0,0);
-	}
-	else
-*/
-	// add some weapon bob based on jumping
-	if ( Velocity.Z > 0 )
-	{
-		JumpBob = FMax(-1.5, JumpBob - 0.03 * DeltaTime * FMin(Velocity.Z,300));
-	}
-	else
-	{
-		JumpBob *= (1 -  FMin(1.0, 8.0 * DeltaTime));
-	}
-
-	// Add walk bob to movement
-	OldBobTime = BobTime;
-	Bob = FClamp(Bob, -0.05, 0.05);
-
-	if (Physics == PHYS_Walking )
-	{
-		GetAxes(Rotation,X,Y,Z);
-		Speed2D = VSize(Velocity);
-		if ( Speed2D < 10 )
-			BobTime += 0.2 * DeltaTime;
-		else
-			BobTime += DeltaTime * (0.3 + 0.7 * Speed2D/GroundSpeed);
-		WalkBob = Y * Bob * Speed2D * sin(8 * BobTime);
-		AppliedBob = AppliedBob * (1 - FMin(1, 16 * deltatime));
-		WalkBob.Z = AppliedBob;
-		if ( Speed2D > 10 )
-			WalkBob.Z = WalkBob.Z + 0.75 * Bob * Speed2D * sin(16 * BobTime);
-	}
-	else if ( Physics == PHYS_Swimming )
-	{
-		GetAxes(Rotation,X,Y,Z);
-		BobTime += DeltaTime;
-		Speed2D = Sqrt(Velocity.X * Velocity.X + Velocity.Y * Velocity.Y);
-		WalkBob = Y * Bob *  0.5 * Speed2D * sin(4.0 * BobTime);
-		WalkBob.Z = Bob * 1.5 * Speed2D * sin(8.0 * BobTime);
-	}
-	else
-	{
-		BobTime = 0;
-		WalkBob = WalkBob * (1 - FMin(1, 8 * deltatime));
-	}
-
-	if ( (Physics == PHYS_Walking) && (VSizeSq(Velocity) > 100) && IsFirstPerson() )
-	{
-		m = int(0.5 * Pi + 9.0 * OldBobTime/Pi);
-		n = int(0.5 * Pi + 9.0 * BobTime/Pi);
-
-		if ( (m != n) && !bIsWalking && !bIsCrouched )
-		{
-		//	ActuallyPlayFootStepSound(0);
-		}
-	}
-	if ( (CylinderComponent.CollisionHeight - Eyeheight < 12) && IsFirstPerson() )
-	{
-	  // desired eye position is above collision box
-	  // check to make sure that viewpoint doesn't penetrate another actor
-		// min clip distance 12
-		if (bCollideWorld)
-		{
-			HitActor = trace(HitLocation,HitNormal, Location + WalkBob + (MaxStepHeight + CylinderComponent.CollisionHeight) * vect(0,0,1),
-						  Location + WalkBob, true, vect(12,12,12),, TRACEFLAG_Blocking);
-			MaxEyeHeight = (HitActor == None) ? CylinderComponent.CollisionHeight + MaxStepHeight : HitLocation.Z - Location.Z;
-			Eyeheight = FMin(Eyeheight, MaxEyeHeight);
-		}
-	}
-}
 
 /* GetPawnViewLocation()
 Called by PlayerController to determine camera position in first person view.  Returns
 the location at which to place the camera
 */
-simulated function Vector GetPawnViewLocation()
-{
-	return Location + EyeHeight * vect(0,0,1) + WalkBob;
-}
+simulated native function Vector GetPawnViewLocation();
+simulated native function bool CalcCamera( float fDeltaTime, out vector out_CamLoc, out rotator out_CamRot, out float out_FOV );
 
 native function AddDefaultInventory();
 
@@ -167,6 +53,11 @@ defaultproperties
 {
 	BaseEyeHeight=27.0
 	EyeHeight=27.0
+	Bob=0.028000
+	MeleeRange=+00050.000000
+    GroundSpeed=+00320.000000
+    AirSpeed=+00320.000000
+    AccelRate=+02048.000000
 	InventoryManagerClass=class'DukeInventoryManager'
 
 	Begin Object Class=DynamicLightEnvironmentComponent Name=DukeLightEnvironment

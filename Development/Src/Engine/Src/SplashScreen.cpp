@@ -223,8 +223,8 @@ DWORD WINAPI StartSplashScreenThread( LPVOID unused )
 		bShowThirdPartyCopyrightInfo = TRUE;
 #endif
 		// Setup bounds for version info text 1
-		GSplashScreenTextRects[ SplashTextType::VersionInfo1 ].top = bm.bmHeight - 60;
-		GSplashScreenTextRects[ SplashTextType::VersionInfo1 ].bottom = bm.bmHeight - 40;
+		GSplashScreenTextRects[ SplashTextType::VersionInfo1 ].top = bm.bmHeight - 20;
+		GSplashScreenTextRects[ SplashTextType::VersionInfo1 ].bottom = bm.bmHeight;
 		GSplashScreenTextRects[ SplashTextType::VersionInfo1 ].left = 10;
 		GSplashScreenTextRects[ SplashTextType::VersionInfo1 ].right = bm.bmWidth - 20;
 
@@ -289,7 +289,7 @@ DWORD WINAPI StartSplashScreenThread( LPVOID unused )
 
 				const FString AppName = FString::Printf( LocalizeSecure( LocalizeUnrealEd( "UnrealEdTitle_RHI_F" ), *GameName, *PlatformBitsString, *RHIName ) );
 #endif
-				const FString VersionInfo1 = FString::Printf( LocalizeSecure( LocalizeUnrealEd( TEXT( "SplashScreen_VersionInfo1_F" ) ), *AppName, GEngineVersion, GBuiltFromChangeList ) );
+				const FString VersionInfo1 = TEXT("Duke's Enormous Tool 2004 (Loading Please Wait...)"); //FString::Printf( LocalizeSecure( LocalizeUnrealEd( TEXT( "SplashScreen_VersionInfo1_F" ) ), *AppName, GEngineVersion, GBuiltFromChangeList ) );
 				appSetSplashText( SplashTextType::VersionInfo1, *VersionInfo1 );
 
 				// Change the window text (which will be displayed in the taskbar)
@@ -298,7 +298,8 @@ DWORD WINAPI StartSplashScreenThread( LPVOID unused )
 		}
 		
 
-		// Display copyright information in both editor and game splash screens
+		// Only show copyright info on game splash
+		if( !GIsEditor )
 		{
 			const FString CopyrightInfo = LocalizeGeneral( TEXT( "SplashScreen_CopyrightInfo" ), TEXT("Engine") );
 			appSetSplashText( SplashTextType::CopyrightInfo, *CopyrightInfo );
@@ -392,6 +393,11 @@ void appHideSplash()
  */
 void appSetSplashText( const SplashTextType::Type InType, const TCHAR* InText )
 {
+// jmarshall - this was too noisy
+	if(InType == SplashTextType::StartupProgress)
+		return;
+// jmarshall end
+
 	// We only want to bother drawing startup progress in the editor, since this information is
 	// not interesting to an end-user (also, it's not usually localized properly.)
 	if( GSplashScreenThread )

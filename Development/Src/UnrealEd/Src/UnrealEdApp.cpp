@@ -805,11 +805,14 @@ bool WxUnrealEdApp::OnInit()
 		if (InitErrorMessageText.Len() > 0)
 		{
 			warnf(TEXT("Asset Database errors: %s"), *InitErrorMessageText);
-
+// jmarshall - disable GAD warning by default. 
+/*
 			if (!ParseParam(appCmdLine(), TEXT( "NoGADWarning" )))
 			{
 				appMsgf( AMT_OK, *LocalizeUnrealEd( "UnrealEdStartup_GameAssetDatabaseStartupWarnings" ) );
 			}
+*/
+// jmarshall end
 		}
 
 		GWarn->StatusUpdatef( -1, -1, *LocalizeUnrealEd( TEXT( "SplashScreen_DefaultLoading" ) ) );

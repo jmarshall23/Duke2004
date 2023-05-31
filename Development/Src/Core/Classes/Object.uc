@@ -930,8 +930,6 @@ native static final function float RDiff( Rotator A, Rotator B );
 
 native static final function float RSize(rotator R);
 
-
-
 /**
  * Clamp a rotation Axis.
  * The ViewAxis rotation component must be normalized (within the [-32768,+32767] range).
