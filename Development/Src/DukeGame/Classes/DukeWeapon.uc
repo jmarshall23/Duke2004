@@ -42,6 +42,8 @@ var(Animations)	array<name>	WeaponFireAnim;
 
 var EWeaponState weaponState;
 
+native function ResetToIdle();
+
 simulated function PostBeginPlay()
 {
 	Super.PostBeginPlay();
@@ -247,9 +249,7 @@ simulated function TimeWeaponEquipping()
 	// The weapon is equipped, attach it to the mesh.
 	AttachWeaponTo( Instigator.Mesh );
 
-	PlayWeaponAnimation(WeaponIdleAnims[0], 0.0, true);
-
-	weaponState = WEAPON_STATE_IDLE;
+	ResetToIdle();
 }
 
 simulated state Active

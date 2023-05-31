@@ -82,6 +82,8 @@
     <None Include="..\..\..\ExampleGame\Config\Xbox360\Xbox360Input.ini" />
     <None Include="..\..\..\ExampleGame\Localization\Int\ExampleGame.int" />
     <None Include="Classes\AnimNotify_SetWeaponState.uc" />
+    <None Include="Classes\Crushed.uc" />
+    <None Include="Classes\Decoration.uc" />
     <None Include="Classes\DukeGameInfo.uc" />
     <None Include="Classes\DukeHud.uc" />
     <None Include="Classes\DukeInventory.uc" />
@@ -117,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\AnimNotify_SetWeaponState.cpp" />
+    <ClCompile Include="Src\Decoration.cpp" />
     <ClCompile Include="Src\DukeGame.cpp" />
     <ClCompile Include="Src\DukeHud.cpp" />
     <ClCompile Include="Src\DukePawn.cpp" />

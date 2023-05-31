@@ -221,12 +221,15 @@ void UAnimNodeSequence::SetAnim(FName InSequenceName)
 	//	Unless the animation is the same. This can happen if a new skeletal mesh is set, then it forces all
 	// animations to be recached. If the animation is the same, then it's safe to update it.
 	// Note that it can be set to NAME_None if the AnimSet has been removed as well.
+// jmarshall - we won't be changing the skeleton on animation updates.
+/*
 	if( bIsIssuingNotifies && AnimSeqName != InSequenceName )
 	{
 		debugf( TEXT("UAnimNodeSequence::SetAnim : Not safe to call SetAnim from inside a Notify. AnimName: %s, Owner: %s"), *InSequenceName.ToString(), *SkelComponent->GetOwner()->GetName() );
 		return;
 	}
-
+*/
+// jmarshall end
 	// Track AnimSeq changes, so we can update the metadata classes only when really needed.
 	UAnimSequence* OldAnimSeq = AnimSeq;
 

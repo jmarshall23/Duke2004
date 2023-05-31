@@ -21,6 +21,7 @@
 #endif
 
 
+AUTOGENERATE_NAME(NotReachableBy)
 AUTOGENERATE_NAME(PlayAnim)
 AUTOGENERATE_NAME(SeeFocalPoint)
 AUTOGENERATE_NAME(SetPosition)

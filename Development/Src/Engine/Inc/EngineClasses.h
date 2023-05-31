@@ -11900,6 +11900,12 @@ struct Weapon_eventGetTraceRange_Parms
     {
     }
 };
+struct Weapon_eventStopWeaponAnimation_Parms
+{
+    Weapon_eventStopWeaponAnimation_Parms(EEventParm)
+    {
+    }
+};
 struct Weapon_eventPlayWeaponAnimation_Parms
 {
     FName Sequence;
@@ -11977,6 +11983,10 @@ public:
         Parms.ReturnValue=0;
         ProcessEvent(FindFunctionChecked(ENGINE_GetTraceRange),&Parms);
         return Parms.ReturnValue;
+    }
+    void eventStopWeaponAnimation()
+    {
+        ProcessEvent(FindFunctionChecked(ENGINE_StopWeaponAnimation),NULL);
     }
     void eventPlayWeaponAnimation(FName Sequence,FLOAT fDesiredDuration,UBOOL bLoop=FALSE,class USkeletalMeshComponent* SkelMesh=NULL)
     {

@@ -96,6 +96,102 @@ public:
 	virtual FString GetEditorComment() { return TEXT("WeaponState"); }
 };
 
+class UCrushed : public UDamageType
+{
+public:
+    //## BEGIN PROPS Crushed
+    //## END PROPS Crushed
+
+    DECLARE_ABSTRACT_CLASS(UCrushed,UDamageType,0,DukeGame)
+    NO_DEFAULT_CONSTRUCTOR(UCrushed)
+};
+
+struct Decoration_eventNotReachableBy_Parms
+{
+    class APawn* P;
+    Decoration_eventNotReachableBy_Parms(EEventParm)
+    {
+    }
+};
+class ADecoration : public APawn
+{
+public:
+    //## BEGIN PROPS Decoration
+    class UClass* EffectWhenDestroyed;
+    BITFIELD bPushable:1;
+    BITFIELD bDamageable:1;
+    BITFIELD bPushSoundPlaying:1;
+    BITFIELD bSplash:1;
+    class USoundCue* PushSound;
+    class USoundCue* EndPushSound;
+    INT numLandings;
+    class UClass* Contents;
+    INT NumFrags;
+    class UTexture* FragSkin;
+    FVector FragMomentum;
+    INT Health;
+    FLOAT SplashTime;
+    FLOAT LastValidAnchorTime;
+    //## END PROPS Decoration
+
+    virtual UBOOL CanSplash();
+    virtual void Landed(FVector HitNormal,class AActor* FloorActor);
+    virtual void TakeDamage(INT DamageAmount,class AController* EventInstigator,FVector HitLocation,FVector Momentum,class UClass* DamageType,struct FTraceHitInfo HitInfo=FTraceHitInfo(EC_EventParm),class AActor* DamageCauser=NULL);
+    virtual void PhysicsVolumeChange(class APhysicsVolume* NewVolume);
+    virtual void Trigger(class AActor* Other,class APawn* EventInstigator);
+    virtual void BaseChangeImp();
+    DECLARE_FUNCTION(execCanSplash)
+    {
+        P_FINISH;
+        *(UBOOL*)Result=this->CanSplash();
+    }
+    DECLARE_FUNCTION(execLanded)
+    {
+        P_GET_STRUCT(FVector,HitNormal);
+        P_GET_OBJECT(AActor,FloorActor);
+        P_FINISH;
+        this->Landed(HitNormal,FloorActor);
+    }
+    DECLARE_FUNCTION(execTakeDamage)
+    {
+        P_GET_INT(DamageAmount);
+        P_GET_OBJECT(AController,EventInstigator);
+        P_GET_STRUCT(FVector,HitLocation);
+        P_GET_STRUCT(FVector,Momentum);
+        P_GET_OBJECT(UClass,DamageType);
+        P_GET_STRUCT_OPTX(struct FTraceHitInfo,HitInfo,FTraceHitInfo(EC_EventParm));
+        P_GET_OBJECT_OPTX(AActor,DamageCauser,NULL);
+        P_FINISH;
+        this->TakeDamage(DamageAmount,EventInstigator,HitLocation,Momentum,DamageType,HitInfo,DamageCauser);
+    }
+    DECLARE_FUNCTION(execPhysicsVolumeChange)
+    {
+        P_GET_OBJECT(APhysicsVolume,NewVolume);
+        P_FINISH;
+        this->PhysicsVolumeChange(NewVolume);
+    }
+    DECLARE_FUNCTION(execTrigger)
+    {
+        P_GET_OBJECT(AActor,Other);
+        P_GET_OBJECT(APawn,EventInstigator);
+        P_FINISH;
+        this->Trigger(Other,EventInstigator);
+    }
+    DECLARE_FUNCTION(execBaseChangeImp)
+    {
+        P_FINISH;
+        this->BaseChangeImp();
+    }
+    void eventNotReachableBy(class APawn* P)
+    {
+        Decoration_eventNotReachableBy_Parms Parms(EC_EventParm);
+        Parms.P=P;
+        ProcessEvent(FindFunctionChecked(DUKEGAME_NotReachableBy),&Parms);
+    }
+    DECLARE_ABSTRACT_CLASS(ADecoration,APawn,0|CLASS_Config,DukeGame)
+    NO_DEFAULT_CONSTRUCTOR(ADecoration)
+};
+
 class ADukeHUD : public AHUD
 {
 public:
@@ -239,7 +335,13 @@ public:
     SCRIPT_ALIGN;
     //## END PROPS DukeWeapon
 
+    virtual void ResetToIdle();
     virtual void BeginFire(BYTE FireModeNum);
+    DECLARE_FUNCTION(execResetToIdle)
+    {
+        P_FINISH;
+        this->ResetToIdle();
+    }
     DECLARE_FUNCTION(execBeginFire)
     {
         P_GET_BYTE(FireModeNum);
@@ -429,11 +531,18 @@ public:
 #endif // !INCLUDED_DUKEGAME_CLASSES
 #endif // !NAMES_ONLY
 
+AUTOGENERATE_FUNCTION(ADecoration,-1,execBaseChangeImp);
+AUTOGENERATE_FUNCTION(ADecoration,-1,execTrigger);
+AUTOGENERATE_FUNCTION(ADecoration,-1,execPhysicsVolumeChange);
+AUTOGENERATE_FUNCTION(ADecoration,-1,execTakeDamage);
+AUTOGENERATE_FUNCTION(ADecoration,-1,execLanded);
+AUTOGENERATE_FUNCTION(ADecoration,-1,execCanSplash);
 AUTOGENERATE_FUNCTION(ADukeHUD,-1,execDrawScaledTexture);
 AUTOGENERATE_FUNCTION(ADukeHUD,-1,execRenderHud);
 AUTOGENERATE_FUNCTION(ADukeHUD,-1,execHudStartup);
 AUTOGENERATE_FUNCTION(ADukePawn,-1,execAddDefaultInventory);
 AUTOGENERATE_FUNCTION(ADukeWeapon,-1,execBeginFire);
+AUTOGENERATE_FUNCTION(ADukeWeapon,-1,execResetToIdle);
 
 #ifndef NAMES_ONLY
 #undef AUTOGENERATE_FUNCTION
@@ -445,6 +554,9 @@ AUTOGENERATE_FUNCTION(ADukeWeapon,-1,execBeginFire);
 
 #define AUTO_INITIALIZE_REGISTRANTS_DUKEGAME \
 	UAnimNotify_SetWeaponState::StaticClass(); \
+	UCrushed::StaticClass(); \
+	ADecoration::StaticClass(); \
+	GNativeLookupFuncs.Set(FName("Decoration"), GDukeGameADecorationNatives); \
 	ADukeHUD::StaticClass(); \
 	GNativeLookupFuncs.Set(FName("DukeHUD"), GDukeGameADukeHUDNatives); \
 	ADukePawn::StaticClass(); \
@@ -457,6 +569,17 @@ AUTOGENERATE_FUNCTION(ADukeWeapon,-1,execBeginFire);
 #endif // DUKEGAME_NATIVE_DEFS
 
 #ifdef NATIVES_ONLY
+FNativeFunctionLookup GDukeGameADecorationNatives[] = 
+{ 
+	MAP_NATIVE(ADecoration, execBaseChangeImp)
+	MAP_NATIVE(ADecoration, execTrigger)
+	MAP_NATIVE(ADecoration, execPhysicsVolumeChange)
+	MAP_NATIVE(ADecoration, execTakeDamage)
+	MAP_NATIVE(ADecoration, execLanded)
+	MAP_NATIVE(ADecoration, execCanSplash)
+	{NULL, NULL}
+};
+
 FNativeFunctionLookup GDukeGameADukeHUDNatives[] = 
 { 
 	MAP_NATIVE(ADukeHUD, execDrawScaledTexture)
@@ -474,6 +597,7 @@ FNativeFunctionLookup GDukeGameADukePawnNatives[] =
 FNativeFunctionLookup GDukeGameADukeWeaponNatives[] = 
 { 
 	MAP_NATIVE(ADukeWeapon, execBeginFire)
+	MAP_NATIVE(ADukeWeapon, execResetToIdle)
 	{NULL, NULL}
 };
 
@@ -483,6 +607,10 @@ FNativeFunctionLookup GDukeGameADukeWeaponNatives[] =
 #ifdef VERIFY_CLASS_SIZES
 VERIFY_CLASS_OFFSET_NODIE(UAnimNotify_SetWeaponState,AnimNotify_SetWeaponState,newWeaponState)
 VERIFY_CLASS_SIZE_NODIE(UAnimNotify_SetWeaponState)
+VERIFY_CLASS_SIZE_NODIE(UCrushed)
+VERIFY_CLASS_OFFSET_NODIE(ADecoration,Decoration,EffectWhenDestroyed)
+VERIFY_CLASS_OFFSET_NODIE(ADecoration,Decoration,LastValidAnchorTime)
+VERIFY_CLASS_SIZE_NODIE(ADecoration)
 VERIFY_CLASS_OFFSET_NODIE(ADukeHUD,DukeHUD,Opacity)
 VERIFY_CLASS_OFFSET_NODIE(ADukeHUD,DukeHUD,NumberCircleTexture)
 VERIFY_CLASS_SIZE_NODIE(ADukeHUD)

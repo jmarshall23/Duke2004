@@ -16,6 +16,6 @@ void UAnimNotify_SetWeaponState::Notify( class UAnimNodeSequence* NodeSeq )
 			return;
 		}
 
-		weapon->weaponState = WEAPON_STATE_IDLE;
+		weapon->ResetToIdle();
 	}
 }

@@ -902,6 +902,26 @@ public:
 		return Abs( X - Y ) < Tolerance && Abs( X - Z ) < Tolerance && Abs( Y - Z ) < Tolerance;
 	}
 
+// jmarshall
+	/** Unit X axis vector (1,0,0) */
+	FORCEINLINE static FVector GetXAxisVector()
+	{
+		return FVector(1, 0, 0);
+	}
+
+	/** Unit Y axis vector (0,1,0) */
+	FORCEINLINE static FVector GetYAxisVector()
+	{
+		return FVector(0, 1, 0);
+	}
+
+	/** Unit Z axis vector (0,0,1) */
+	FORCEINLINE static FVector GetZAxisVector()
+	{
+		return FVector(0, 0, 1);
+	}
+// jmarshall end
+
 	// Unary operators.
 	FORCEINLINE FVector operator-() const
 	{

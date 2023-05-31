@@ -177,6 +177,12 @@
     <None Include="Classes\AnimNotify_SetWeaponState.uc">
       <Filter>Classes</Filter>
     </None>
+    <None Include="Classes\Decoration.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\Crushed.uc">
+      <Filter>Classes</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\NullSurveys.cpp">
@@ -201,6 +207,9 @@
       <Filter>Src</Filter>
     </ClCompile>
     <ClCompile Include="Src\AnimNotify_SetWeaponState.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Decoration.cpp">
       <Filter>Src</Filter>
     </ClCompile>
   </ItemGroup>

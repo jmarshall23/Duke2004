@@ -604,7 +604,7 @@ event PlayWeaponAnimation( Name Sequence, float fDesiredDuration, optional bool 
  * Network: Local Player and clients
  *
  */
-simulated function StopWeaponAnimation()
+event StopWeaponAnimation()
 {
 	local AnimNodeSequence AnimSeq;
 
