@@ -137,7 +137,7 @@ defaultproperties
     SlideRate=400.000000
 	HUDScaleX=1.0
 	HUDScaleY=1.0
-	HUDScale=1.0
+	HUDScale=1.3
 	IndexTopOffset=27.0
     IndexName="S.O.S v1"
     GradientTexture=Texture'hud_effects.ing_gradient1BC'
