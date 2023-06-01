@@ -498,7 +498,7 @@ TCHAR					GDefaultLightmassIni[1024]		= TEXT("");					/* Default Lightmass setti
 TCHAR					GDefaultInputIni[1024]			= TEXT("");					/* Default Input ini file */
 TCHAR					GDefaultGameIni[1024]			= TEXT("");					/* Default Game ini file */
 TCHAR					GDefaultUIIni[1024]				= TEXT("");
-FLOAT					GNearClippingPlane				= 10.0f;					/* Near clipping plane */
+FLOAT					GNearClippingPlane				= 0.5f;					/* Near clipping plane */
 /** Timestep if a fixed delta time is wanted.																*/
 DOUBLE					GFixedDeltaTime					= 1 / 30.f;
 /** Current delta time in seconds.																			*/
