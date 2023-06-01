@@ -192,6 +192,15 @@
     <None Include="Classes\DukeMenuController.uc">
       <Filter>Classes</Filter>
     </None>
+    <None Include="Classes\Pigcop.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\DukeAnimBlendBase.uc">
+      <Filter>Classes</Filter>
+    </None>
+    <None Include="Classes\DukeAnimBlendIdle.uc">
+      <Filter>Classes</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\NullSurveys.cpp">
@@ -227,12 +236,24 @@
     <ClCompile Include="Src\DukeMainMenu.cpp">
       <Filter>Src</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Pigcop.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\DukeAnimBlendBase.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\DukeAnimBlendIdle.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Inc\DukeGame.h">
       <Filter>Inc</Filter>
     </ClInclude>
     <ClInclude Include="Inc\DukeGameClasses.h">
+      <Filter>Inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Inc\DukeGameAnimationClasses.h">
       <Filter>Inc</Filter>
     </ClInclude>
   </ItemGroup>

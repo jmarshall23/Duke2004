@@ -442,6 +442,15 @@ struct HumanNPC_eventSeeFocalPoint_Parms
     {
     }
 };
+struct HumanNPC_eventPlayNPCAnimation_Parms
+{
+    FName Sequence;
+    FLOAT fDesiredDuration;
+    UBOOL bLoop;
+    HumanNPC_eventPlayNPCAnimation_Parms(EEventParm)
+    {
+    }
+};
 class AHumanNPC : public AGamePawn
 {
 public:
@@ -544,6 +553,12 @@ public:
     FVector WanderDir;
     //## END PROPS HumanNPC
 
+    virtual void State_Idle();
+    DECLARE_FUNCTION(execState_Idle)
+    {
+        P_FINISH;
+        this->State_Idle();
+    }
     void eventPlayAnim(FName AnimName,FLOAT Duration=0,UBOOL bLoop=FALSE,UBOOL bRestartIfAlreadyPlaying=TRUE,FLOAT StartTime=0.000000,UBOOL bPlayBackwards=FALSE)
     {
         HumanNPC_eventPlayAnim_Parms Parms(EC_EventParm);
@@ -561,8 +576,27 @@ public:
         Parms.PointSeen=PointSeen;
         ProcessEvent(FindFunctionChecked(DUKEGAME_SeeFocalPoint),&Parms);
     }
+    void eventPlayNPCAnimation(FName Sequence,FLOAT fDesiredDuration,UBOOL bLoop=FALSE)
+    {
+        HumanNPC_eventPlayNPCAnimation_Parms Parms(EC_EventParm);
+        Parms.Sequence=Sequence;
+        Parms.fDesiredDuration=fDesiredDuration;
+        Parms.bLoop=bLoop ? FIRST_BITFIELD : FALSE;
+        ProcessEvent(FindFunctionChecked(DUKEGAME_PlayNPCAnimation),&Parms);
+    }
     DECLARE_CLASS(AHumanNPC,AGamePawn,0|CLASS_Config,DukeGame)
 	virtual void PostBeginPlay();
+};
+
+class APigcop : public AHumanNPC
+{
+public:
+    //## BEGIN PROPS Pigcop
+    //## END PROPS Pigcop
+
+    virtual void State_Idle();
+    DECLARE_CLASS(APigcop,AHumanNPC,0|CLASS_Config,DukeGame)
+    NO_DEFAULT_CONSTRUCTOR(APigcop)
 };
 
 #undef DECLARE_CLASS
@@ -588,6 +622,8 @@ AUTOGENERATE_FUNCTION(ADukePawn,-1,execCalcCamera);
 AUTOGENERATE_FUNCTION(ADukePawn,-1,execGetPawnViewLocation);
 AUTOGENERATE_FUNCTION(ADukeWeapon,-1,execBeginFire);
 AUTOGENERATE_FUNCTION(ADukeWeapon,-1,execResetToIdle);
+AUTOGENERATE_FUNCTION(AHumanNPC,-1,execState_Idle);
+AUTOGENERATE_FUNCTION(APigcop,-1,execState_Idle);
 
 #ifndef NAMES_ONLY
 #undef AUTOGENERATE_FUNCTION
@@ -615,6 +651,9 @@ AUTOGENERATE_FUNCTION(ADukeWeapon,-1,execResetToIdle);
 	GNativeLookupFuncs.Set(FName("DukeWeapon"), GDukeGameADukeWeaponNatives); \
 	AWeaponPistol::StaticClass(); \
 	AHumanNPC::StaticClass(); \
+	GNativeLookupFuncs.Set(FName("HumanNPC"), GDukeGameAHumanNPCNatives); \
+	APigcop::StaticClass(); \
+	GNativeLookupFuncs.Set(FName("Pigcop"), GDukeGameAPigcopNatives); \
 
 #endif // DUKEGAME_NATIVE_DEFS
 
@@ -665,6 +704,18 @@ FNativeFunctionLookup GDukeGameADukeWeaponNatives[] =
 	{NULL, NULL}
 };
 
+FNativeFunctionLookup GDukeGameAHumanNPCNatives[] = 
+{ 
+	MAP_NATIVE(AHumanNPC, execState_Idle)
+	{NULL, NULL}
+};
+
+FNativeFunctionLookup GDukeGameAPigcopNatives[] = 
+{ 
+	MAP_NATIVE(APigcop, execState_Idle)
+	{NULL, NULL}
+};
+
 #endif // NATIVES_ONLY
 #endif // STATIC_LINKING_MOJO
 
@@ -691,6 +742,7 @@ VERIFY_CLASS_SIZE_NODIE(AWeaponPistol)
 VERIFY_CLASS_OFFSET_NODIE(AHumanNPC,HumanNPC,Skill)
 VERIFY_CLASS_OFFSET_NODIE(AHumanNPC,HumanNPC,WanderDir)
 VERIFY_CLASS_SIZE_NODIE(AHumanNPC)
+VERIFY_CLASS_SIZE_NODIE(APigcop)
 #endif // VERIFY_CLASS_SIZES
 #endif // !ENUMS_ONLY
 

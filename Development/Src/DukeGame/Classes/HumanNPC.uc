@@ -169,6 +169,13 @@ cpptext
 	virtual void PostBeginPlay();
 }
 
+event PlayNPCAnimation(Name Sequence, float fDesiredDuration, optional bool bLoop)
+{
+	Mesh.PlayAnim(Sequence, fDesiredDuration, bLoop);
+}
+
+native function State_Idle();
+
 function Activate( optional actor NewTarget );
 
 final function SetAlertness(float NewAlertness)

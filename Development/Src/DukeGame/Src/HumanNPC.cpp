@@ -14,6 +14,11 @@ void AHumanNPC::PostBeginPlay()
 	skelMesh = Cast<USkeletalMeshComponent>(Mesh);
 	if(skelMesh != NULL)
 	{
-		
+		State_Idle();
 	}
+}
+
+void AHumanNPC::State_Idle()
+{
+
 }

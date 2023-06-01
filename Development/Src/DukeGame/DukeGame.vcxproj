@@ -84,6 +84,8 @@
     <None Include="Classes\AnimNotify_SetWeaponState.uc" />
     <None Include="Classes\Crushed.uc" />
     <None Include="Classes\Decoration.uc" />
+    <None Include="Classes\DukeAnimBlendBase.uc" />
+    <None Include="Classes\DukeAnimBlendIdle.uc" />
     <None Include="Classes\DukeGameInfo.uc" />
     <None Include="Classes\DukeHud.uc" />
     <None Include="Classes\DukeInventory.uc" />
@@ -95,6 +97,7 @@
     <None Include="Classes\DukePlayerController.uc" />
     <None Include="Classes\DukeWeapon.uc" />
     <None Include="Classes\HumanNPC.uc" />
+    <None Include="Classes\Pigcop.uc" />
     <None Include="Classes\WeaponPistol.uc" />
     <None Include="Live\ExampleGame.PNG" />
     <None Include="Live\ExampleGame.spa" />
@@ -123,6 +126,8 @@
   <ItemGroup>
     <ClCompile Include="Src\AnimNotify_SetWeaponState.cpp" />
     <ClCompile Include="Src\Decoration.cpp" />
+    <ClCompile Include="Src\DukeAnimBlendBase.cpp" />
+    <ClCompile Include="Src\DukeAnimBlendIdle.cpp" />
     <ClCompile Include="Src\DukeGame.cpp" />
     <ClCompile Include="Src\DukeGameInfo.cpp" />
     <ClCompile Include="Src\DukeHud.cpp" />
@@ -132,9 +137,11 @@
     <ClCompile Include="Src\DukeWeapon.cpp" />
     <ClCompile Include="Src\HumanNPC.cpp" />
     <ClCompile Include="Src\NullSurveys.cpp" />
+    <ClCompile Include="Src\Pigcop.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Inc\DukeGame.h" />
+    <ClInclude Include="Inc\DukeGameAnimationClasses.h" />
     <ClInclude Include="Inc\DukeGameClasses.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
