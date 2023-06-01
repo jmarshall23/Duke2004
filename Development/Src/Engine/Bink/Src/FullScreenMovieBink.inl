@@ -245,10 +245,9 @@ FFullScreenMovieBink::FFullScreenMovieBink(UBOOL bUseSound)
 	// by default, we are "done" playing a movie
 	MovieFinishEvent->Trigger();
 
-#if UDK
-	// force Unreal Engine logo movie for UDK
-	StartupMovieNames.AddUniqueItem(TEXT("UE3_logo"));
-#endif
+// jmarshall
+	StartupMovieNames.AddUniqueItem(TEXT("DukeIntro"));
+// jmarshall end
 
 	// read movie entries from config file
 	FConfigSection* MovieIni = GConfig->GetSectionPrivate( TEXT("FullScreenMovie"), FALSE, TRUE, GEngineIni );

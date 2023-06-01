@@ -88,6 +88,9 @@
     <None Include="Classes\DukeHud.uc" />
     <None Include="Classes\DukeInventory.uc" />
     <None Include="Classes\DukeInventoryManager.uc" />
+    <None Include="Classes\DukeMainMenu.uc" />
+    <None Include="Classes\DukeMenuController.uc" />
+    <None Include="Classes\DukeMenuGameInfo.uc" />
     <None Include="Classes\DukePawn.uc" />
     <None Include="Classes\DukePlayerController.uc" />
     <None Include="Classes\DukeWeapon.uc" />
@@ -121,7 +124,9 @@
     <ClCompile Include="Src\AnimNotify_SetWeaponState.cpp" />
     <ClCompile Include="Src\Decoration.cpp" />
     <ClCompile Include="Src\DukeGame.cpp" />
+    <ClCompile Include="Src\DukeGameInfo.cpp" />
     <ClCompile Include="Src\DukeHud.cpp" />
+    <ClCompile Include="Src\DukeMainMenu.cpp" />
     <ClCompile Include="Src\DukePawn.cpp" />
     <ClCompile Include="Src\DukePistol.cpp" />
     <ClCompile Include="Src\DukeWeapon.cpp" />

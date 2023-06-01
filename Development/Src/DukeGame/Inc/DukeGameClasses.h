@@ -192,6 +192,25 @@ public:
     NO_DEFAULT_CONSTRUCTOR(ADecoration)
 };
 
+class ADukeGameInfo : public AFrameworkGame
+{
+public:
+    //## BEGIN PROPS DukeGameInfo
+    //## END PROPS DukeGameInfo
+
+    class UClass* GetGameType(const FString& MapName,const FString& Options,const FString& Portal);
+    DECLARE_FUNCTION(execGetGameType)
+    {
+        P_GET_STR(MapName);
+        P_GET_STR(Options);
+        P_GET_STR(Portal);
+        P_FINISH;
+        *(class UClass**)Result=this->GetGameType(MapName,Options,Portal);
+    }
+    DECLARE_CLASS(ADukeGameInfo,AFrameworkGame,0|CLASS_Config,DukeGame)
+    NO_DEFAULT_CONSTRUCTOR(ADukeGameInfo)
+};
+
 class ADukeHUD : public AHUD
 {
 public:
@@ -264,6 +283,32 @@ public:
     DECLARE_CLASS(ADukeHUD,AHUD,0|CLASS_Transient|CLASS_Config,DukeGame)
 	void DrawStatusIndex();
 	void DrawCrosshair();
+};
+
+class ADukeMainMenu : public AHUD
+{
+public:
+    //## BEGIN PROPS DukeMainMenu
+    //## END PROPS DukeMainMenu
+
+    virtual void RenderMainMenu();
+    DECLARE_FUNCTION(execRenderMainMenu)
+    {
+        P_FINISH;
+        this->RenderMainMenu();
+    }
+    DECLARE_CLASS(ADukeMainMenu,AHUD,0|CLASS_Transient|CLASS_Config,DukeGame)
+    NO_DEFAULT_CONSTRUCTOR(ADukeMainMenu)
+};
+
+class ADukeMenuGameInfo : public AFrameworkGame
+{
+public:
+    //## BEGIN PROPS DukeMenuGameInfo
+    //## END PROPS DukeMenuGameInfo
+
+    DECLARE_CLASS(ADukeMenuGameInfo,AFrameworkGame,0|CLASS_Config,DukeGame)
+    NO_DEFAULT_CONSTRUCTOR(ADukeMenuGameInfo)
 };
 
 class ADukePawn : public AGamePawn
@@ -533,9 +578,11 @@ AUTOGENERATE_FUNCTION(ADecoration,-1,execPhysicsVolumeChange);
 AUTOGENERATE_FUNCTION(ADecoration,-1,execTakeDamage);
 AUTOGENERATE_FUNCTION(ADecoration,-1,execLanded);
 AUTOGENERATE_FUNCTION(ADecoration,-1,execCanSplash);
+AUTOGENERATE_FUNCTION(ADukeGameInfo,-1,execGetGameType);
 AUTOGENERATE_FUNCTION(ADukeHUD,-1,execDrawScaledTexture);
 AUTOGENERATE_FUNCTION(ADukeHUD,-1,execRenderHud);
 AUTOGENERATE_FUNCTION(ADukeHUD,-1,execHudStartup);
+AUTOGENERATE_FUNCTION(ADukeMainMenu,-1,execRenderMainMenu);
 AUTOGENERATE_FUNCTION(ADukePawn,-1,execAddDefaultInventory);
 AUTOGENERATE_FUNCTION(ADukePawn,-1,execCalcCamera);
 AUTOGENERATE_FUNCTION(ADukePawn,-1,execGetPawnViewLocation);
@@ -555,8 +602,13 @@ AUTOGENERATE_FUNCTION(ADukeWeapon,-1,execResetToIdle);
 	UCrushed::StaticClass(); \
 	ADecoration::StaticClass(); \
 	GNativeLookupFuncs.Set(FName("Decoration"), GDukeGameADecorationNatives); \
+	ADukeGameInfo::StaticClass(); \
+	GNativeLookupFuncs.Set(FName("DukeGameInfo"), GDukeGameADukeGameInfoNatives); \
 	ADukeHUD::StaticClass(); \
 	GNativeLookupFuncs.Set(FName("DukeHUD"), GDukeGameADukeHUDNatives); \
+	ADukeMainMenu::StaticClass(); \
+	GNativeLookupFuncs.Set(FName("DukeMainMenu"), GDukeGameADukeMainMenuNatives); \
+	ADukeMenuGameInfo::StaticClass(); \
 	ADukePawn::StaticClass(); \
 	GNativeLookupFuncs.Set(FName("DukePawn"), GDukeGameADukePawnNatives); \
 	ADukeWeapon::StaticClass(); \
@@ -578,11 +630,23 @@ FNativeFunctionLookup GDukeGameADecorationNatives[] =
 	{NULL, NULL}
 };
 
+FNativeFunctionLookup GDukeGameADukeGameInfoNatives[] = 
+{ 
+	MAP_NATIVE(ADukeGameInfo, execGetGameType)
+	{NULL, NULL}
+};
+
 FNativeFunctionLookup GDukeGameADukeHUDNatives[] = 
 { 
 	MAP_NATIVE(ADukeHUD, execDrawScaledTexture)
 	MAP_NATIVE(ADukeHUD, execRenderHud)
 	MAP_NATIVE(ADukeHUD, execHudStartup)
+	{NULL, NULL}
+};
+
+FNativeFunctionLookup GDukeGameADukeMainMenuNatives[] = 
+{ 
+	MAP_NATIVE(ADukeMainMenu, execRenderMainMenu)
 	{NULL, NULL}
 };
 
@@ -611,9 +675,12 @@ VERIFY_CLASS_SIZE_NODIE(UCrushed)
 VERIFY_CLASS_OFFSET_NODIE(ADecoration,Decoration,EffectWhenDestroyed)
 VERIFY_CLASS_OFFSET_NODIE(ADecoration,Decoration,LastValidAnchorTime)
 VERIFY_CLASS_SIZE_NODIE(ADecoration)
+VERIFY_CLASS_SIZE_NODIE(ADukeGameInfo)
 VERIFY_CLASS_OFFSET_NODIE(ADukeHUD,DukeHUD,Opacity)
 VERIFY_CLASS_OFFSET_NODIE(ADukeHUD,DukeHUD,NumberCircleTexture)
 VERIFY_CLASS_SIZE_NODIE(ADukeHUD)
+VERIFY_CLASS_SIZE_NODIE(ADukeMainMenu)
+VERIFY_CLASS_SIZE_NODIE(ADukeMenuGameInfo)
 VERIFY_CLASS_OFFSET_NODIE(ADukePawn,DukePawn,Bob)
 VERIFY_CLASS_OFFSET_NODIE(ADukePawn,DukePawn,WalkBob)
 VERIFY_CLASS_SIZE_NODIE(ADukePawn)

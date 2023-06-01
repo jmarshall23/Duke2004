@@ -5,7 +5,7 @@
 
 IMPLEMENT_CLASS(ADecoration)
 
-	UBOOL ADecoration::CanSplash()
+UBOOL ADecoration::CanSplash()
 {
 	if ( (WorldInfo->TimeSeconds - SplashTime > 0.25) && (Physics == PHYS_Falling) && (Abs(Velocity.Z) > 100) )
 	{

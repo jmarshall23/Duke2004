@@ -1,9 +1,17 @@
-class DukeGameInfo extends FrameworkGame;
+class DukeGameInfo extends FrameworkGame
+	native;
 
 auto State PendingMatch
 {
 Begin:
 	StartMatch();
+}
+
+static native function class<GameInfo> GetGameType(string MapName, string Options, string Portal);
+
+static event class<GameInfo> SetGameType(string MapName, string Options, string Portal)
+{
+	return GetGameType(MapName, Options, Portal);
 }
 
 defaultproperties
