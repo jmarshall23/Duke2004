@@ -2,7 +2,7 @@
 //
 
 class DukeAnimBlendIdle extends DukeAnimBlendBase
-	native(Animation);
+	native;
 
 cpptext
 {

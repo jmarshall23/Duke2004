@@ -141,7 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Inc\DukeGame.h" />
-    <ClInclude Include="Inc\DukeGameAnimationClasses.h" />
     <ClInclude Include="Inc\DukeGameClasses.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -7,7 +7,6 @@
 #include "EngineAnimClasses.h"
 #include "GameFramework.h"
 #include "DukeGameClasses.h"
-#include "DukeGameAnimationClasses.h"
 
 class DukeMath
 {

@@ -2,7 +2,7 @@
 //
 
 class DukeAnimBlendBase extends AnimNodeBlendList
-	native(Animation);
+	native;
 
 /** How fast show a given child blend in. */
 var(Animation) float BlendTime;

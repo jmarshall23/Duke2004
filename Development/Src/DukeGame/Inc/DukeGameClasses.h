@@ -192,6 +192,62 @@ public:
     NO_DEFAULT_CONSTRUCTOR(ADecoration)
 };
 
+struct DukeAnimBlendBase_eventTickAnim_Parms
+{
+    FLOAT DeltaSeconds;
+    DukeAnimBlendBase_eventTickAnim_Parms(EEventParm)
+    {
+    }
+};
+class UDukeAnimBlendBase : public UAnimNodeBlendList
+{
+public:
+    //## BEGIN PROPS DukeAnimBlendBase
+    FLOAT BlendTime;
+    TArrayNoInit<FLOAT> ChildBlendTimes;
+    BITFIELD bTickAnimInScript:1;
+    SCRIPT_ALIGN;
+    //## END PROPS DukeAnimBlendBase
+
+    FLOAT GetBlendTime(INT ChildIndex,UBOOL bGetDefault=FALSE);
+    FLOAT GetAnimDuration(INT ChildIndex);
+    DECLARE_FUNCTION(execGetBlendTime)
+    {
+        P_GET_INT(ChildIndex);
+        P_GET_UBOOL_OPTX(bGetDefault,FALSE);
+        P_FINISH;
+        *(FLOAT*)Result=this->GetBlendTime(ChildIndex,bGetDefault);
+    }
+    DECLARE_FUNCTION(execGetAnimDuration)
+    {
+        P_GET_INT(ChildIndex);
+        P_FINISH;
+        *(FLOAT*)Result=this->GetAnimDuration(ChildIndex);
+    }
+    void eventTickAnim(FLOAT DeltaSeconds)
+    {
+        DukeAnimBlendBase_eventTickAnim_Parms Parms(EC_EventParm);
+        Parms.DeltaSeconds=DeltaSeconds;
+        ProcessEvent(FindFunctionChecked(DUKEGAME_TickAnim),&Parms);
+    }
+    DECLARE_CLASS(UDukeAnimBlendBase,UAnimNodeBlendList,0,DukeGame)
+	virtual	void TickAnim(FLOAT DeltaSeconds);
+
+	// AnimTree editor interface
+	virtual void HandleSliderMove(INT SliderIndex, INT ValueIndex, FLOAT NewSliderValue);
+};
+
+class UDukeAnimBlendIdle : public UDukeAnimBlendBase
+{
+public:
+    //## BEGIN PROPS DukeAnimBlendIdle
+    //## END PROPS DukeAnimBlendIdle
+
+    DECLARE_CLASS(UDukeAnimBlendIdle,UDukeAnimBlendBase,0,DukeGame)
+	// AnimNode interface
+	virtual	void TickAnim(FLOAT DeltaSeconds);
+};
+
 class ADukeGameInfo : public AFrameworkGame
 {
 public:
@@ -612,6 +668,8 @@ AUTOGENERATE_FUNCTION(ADecoration,-1,execPhysicsVolumeChange);
 AUTOGENERATE_FUNCTION(ADecoration,-1,execTakeDamage);
 AUTOGENERATE_FUNCTION(ADecoration,-1,execLanded);
 AUTOGENERATE_FUNCTION(ADecoration,-1,execCanSplash);
+AUTOGENERATE_FUNCTION(UDukeAnimBlendBase,-1,execGetAnimDuration);
+AUTOGENERATE_FUNCTION(UDukeAnimBlendBase,-1,execGetBlendTime);
 AUTOGENERATE_FUNCTION(ADukeGameInfo,-1,execGetGameType);
 AUTOGENERATE_FUNCTION(ADukeHUD,-1,execDrawScaledTexture);
 AUTOGENERATE_FUNCTION(ADukeHUD,-1,execRenderHud);
@@ -638,6 +696,9 @@ AUTOGENERATE_FUNCTION(APigcop,-1,execState_Idle);
 	UCrushed::StaticClass(); \
 	ADecoration::StaticClass(); \
 	GNativeLookupFuncs.Set(FName("Decoration"), GDukeGameADecorationNatives); \
+	UDukeAnimBlendBase::StaticClass(); \
+	GNativeLookupFuncs.Set(FName("DukeAnimBlendBase"), GDukeGameUDukeAnimBlendBaseNatives); \
+	UDukeAnimBlendIdle::StaticClass(); \
 	ADukeGameInfo::StaticClass(); \
 	GNativeLookupFuncs.Set(FName("DukeGameInfo"), GDukeGameADukeGameInfoNatives); \
 	ADukeHUD::StaticClass(); \
@@ -666,6 +727,13 @@ FNativeFunctionLookup GDukeGameADecorationNatives[] =
 	MAP_NATIVE(ADecoration, execTakeDamage)
 	MAP_NATIVE(ADecoration, execLanded)
 	MAP_NATIVE(ADecoration, execCanSplash)
+	{NULL, NULL}
+};
+
+FNativeFunctionLookup GDukeGameUDukeAnimBlendBaseNatives[] = 
+{ 
+	MAP_NATIVE(UDukeAnimBlendBase, execGetAnimDuration)
+	MAP_NATIVE(UDukeAnimBlendBase, execGetBlendTime)
 	{NULL, NULL}
 };
 
@@ -726,6 +794,10 @@ VERIFY_CLASS_SIZE_NODIE(UCrushed)
 VERIFY_CLASS_OFFSET_NODIE(ADecoration,Decoration,EffectWhenDestroyed)
 VERIFY_CLASS_OFFSET_NODIE(ADecoration,Decoration,LastValidAnchorTime)
 VERIFY_CLASS_SIZE_NODIE(ADecoration)
+VERIFY_CLASS_OFFSET_NODIE(UDukeAnimBlendBase,DukeAnimBlendBase,BlendTime)
+VERIFY_CLASS_OFFSET_NODIE(UDukeAnimBlendBase,DukeAnimBlendBase,ChildBlendTimes)
+VERIFY_CLASS_SIZE_NODIE(UDukeAnimBlendBase)
+VERIFY_CLASS_SIZE_NODIE(UDukeAnimBlendIdle)
 VERIFY_CLASS_SIZE_NODIE(ADukeGameInfo)
 VERIFY_CLASS_OFFSET_NODIE(ADukeHUD,DukeHUD,Opacity)
 VERIFY_CLASS_OFFSET_NODIE(ADukeHUD,DukeHUD,NumberCircleTexture)

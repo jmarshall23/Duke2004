@@ -253,8 +253,5 @@
     <ClInclude Include="Inc\DukeGameClasses.h">
       <Filter>Inc</Filter>
     </ClInclude>
-    <ClInclude Include="Inc\DukeGameAnimationClasses.h">
-      <Filter>Inc</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
