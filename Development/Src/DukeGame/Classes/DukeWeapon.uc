@@ -10,6 +10,8 @@ var repnotify int AmmoCount;
 /** Max ammo count */
 var int MaxAmmoCount;
 
+var int Damage;
+
 /** The final inventory weight.  It's calculated in PostBeginPlay() */
 var float InventoryWeight;
 
@@ -41,6 +43,17 @@ var(Animations) array<name> WeaponIdleAnims;
 var(Animations)	array<name>	WeaponFireAnim;
 
 var EWeaponState weaponState;
+
+var() SoundCue fireSound1;
+var() SoundCue fireSound2;
+var() SoundCue fireSound3;
+var() int numFireSounds;
+
+cpptext
+{
+	void FireLineTrace();
+	void PlayWeaponFireSound();
+}
 
 native function ResetToIdle();
 
@@ -328,6 +341,8 @@ defaultproperties
 	bForceHidden=FALSE
 	BobDamping=0.85000
 	JumpDamping=1.0
+
+	Damage=0
 
 	weaponState=WEAPON_STATE_NONE
 }

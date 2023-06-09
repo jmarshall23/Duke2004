@@ -22,3 +22,8 @@ void AHumanNPC::State_Idle()
 {
 
 }
+
+void AHumanNPC::Damage(class AActor* Instigator,INT Damage,FVector HitLocation)
+{
+	WorldInfo->MyEmitterPool->SpawnEmitter(bloodCloud1, HitLocation);
+}

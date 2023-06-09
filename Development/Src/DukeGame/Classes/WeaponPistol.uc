@@ -34,4 +34,11 @@ defaultproperties
 	MinimumDamage=5.0
 
 	BobDamping=1.0
+
+	Damage=10
+
+	fireSound1=SoundCue'a_weapons.pistol.ge_attack1_Cue'
+	fireSound2=SoundCue'a_weapons.pistol.ge_attack2_Cue'
+	fireSound3=SoundCue'a_weapons.pistol.ge_attack3_Cue'
+	numFireSounds=3
 }

@@ -414,6 +414,7 @@ public:
     //## BEGIN PROPS DukeWeapon
     INT AmmoCount;
     INT MaxAmmoCount;
+    INT Damage;
     FLOAT InventoryWeight;
     BITFIELD bForceHidden:1;
     BITFIELD bPendingShow:1;
@@ -429,7 +430,10 @@ public:
     TArrayNoInit<FName> WeaponIdleAnims;
     TArrayNoInit<FName> WeaponFireAnim;
     BYTE weaponState;
-    SCRIPT_ALIGN;
+    class USoundCue* fireSound1;
+    class USoundCue* fireSound2;
+    class USoundCue* fireSound3;
+    INT numFireSounds;
     //## END PROPS DukeWeapon
 
     virtual void ResetToIdle();
@@ -452,7 +456,8 @@ public:
         ProcessEvent(FindFunctionChecked(DUKEGAME_SetPosition),&Parms);
     }
     DECLARE_CLASS(ADukeWeapon,AWeapon,0|CLASS_Config,DukeGame)
-    NO_DEFAULT_CONSTRUCTOR(ADukeWeapon)
+	void FireLineTrace();
+	void PlayWeaponFireSound();
 };
 
 class AWeaponPistol : public ADukeWeapon
@@ -607,13 +612,23 @@ public:
     struct FSNPCAnimEvent NPCAnimEvent[15];
     class AActor* SuspiciousActor;
     FVector WanderDir;
+    class UParticleSystem* bloodCloud1;
     //## END PROPS HumanNPC
 
     virtual void State_Idle();
+    virtual void Damage(class AActor* Instigator,INT Damage,FVector HitLocation);
     DECLARE_FUNCTION(execState_Idle)
     {
         P_FINISH;
         this->State_Idle();
+    }
+    DECLARE_FUNCTION(execDamage)
+    {
+        P_GET_OBJECT(AActor,Instigator);
+        P_GET_INT(Damage);
+        P_GET_STRUCT(FVector,HitLocation);
+        P_FINISH;
+        this->Damage(Instigator,Damage,HitLocation);
     }
     void eventPlayAnim(FName AnimName,FLOAT Duration=0,UBOOL bLoop=FALSE,UBOOL bRestartIfAlreadyPlaying=TRUE,FLOAT StartTime=0.000000,UBOOL bPlayBackwards=FALSE)
     {
@@ -680,6 +695,7 @@ AUTOGENERATE_FUNCTION(ADukePawn,-1,execCalcCamera);
 AUTOGENERATE_FUNCTION(ADukePawn,-1,execGetPawnViewLocation);
 AUTOGENERATE_FUNCTION(ADukeWeapon,-1,execBeginFire);
 AUTOGENERATE_FUNCTION(ADukeWeapon,-1,execResetToIdle);
+AUTOGENERATE_FUNCTION(AHumanNPC,-1,execDamage);
 AUTOGENERATE_FUNCTION(AHumanNPC,-1,execState_Idle);
 AUTOGENERATE_FUNCTION(APigcop,-1,execState_Idle);
 
@@ -774,6 +790,7 @@ FNativeFunctionLookup GDukeGameADukeWeaponNatives[] =
 
 FNativeFunctionLookup GDukeGameAHumanNPCNatives[] = 
 { 
+	MAP_NATIVE(AHumanNPC, execDamage)
 	MAP_NATIVE(AHumanNPC, execState_Idle)
 	{NULL, NULL}
 };
@@ -808,11 +825,11 @@ VERIFY_CLASS_OFFSET_NODIE(ADukePawn,DukePawn,Bob)
 VERIFY_CLASS_OFFSET_NODIE(ADukePawn,DukePawn,WalkBob)
 VERIFY_CLASS_SIZE_NODIE(ADukePawn)
 VERIFY_CLASS_OFFSET_NODIE(ADukeWeapon,DukeWeapon,AmmoCount)
-VERIFY_CLASS_OFFSET_NODIE(ADukeWeapon,DukeWeapon,weaponState)
+VERIFY_CLASS_OFFSET_NODIE(ADukeWeapon,DukeWeapon,numFireSounds)
 VERIFY_CLASS_SIZE_NODIE(ADukeWeapon)
 VERIFY_CLASS_SIZE_NODIE(AWeaponPistol)
 VERIFY_CLASS_OFFSET_NODIE(AHumanNPC,HumanNPC,Skill)
-VERIFY_CLASS_OFFSET_NODIE(AHumanNPC,HumanNPC,WanderDir)
+VERIFY_CLASS_OFFSET_NODIE(AHumanNPC,HumanNPC,bloodCloud1)
 VERIFY_CLASS_SIZE_NODIE(AHumanNPC)
 VERIFY_CLASS_SIZE_NODIE(APigcop)
 #endif // VERIFY_CLASS_SIZES

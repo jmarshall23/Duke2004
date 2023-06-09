@@ -9,3 +9,4 @@ D:\projects\Duke2004\Development\Src\UnrealBuildTool\obj\Release\UnrealBuildTool
 D:\projects\Duke2004\Development\Src\UnrealBuildTool\obj\Release\UnrealBuildTool.pdb
 D:\projects\Duke2004\Development\Intermediate\UnrealBuildTool\Release\UnrealBuildTool.exe
 D:\projects\Duke2004\Development\Intermediate\UnrealBuildTool\Release\UnrealBuildTool.pdb
+D:\projects\Duke2004\Development\Src\UnrealBuildTool\obj\Release\UnrealBuildTool.csprojResolveAssemblyReference.cache

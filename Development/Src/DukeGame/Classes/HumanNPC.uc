@@ -164,6 +164,8 @@ var bool				bEMPed;
 //var AICombatController	MyCombatController;
 var vector				WanderDir;
 
+var ParticleSystem		bloodCloud1;
+
 cpptext
 {
 	virtual void PostBeginPlay();
@@ -366,7 +368,9 @@ function bool CanSeeEnemyFrom( vector aLocation, optional float NewEyeHeight, op
 	return false;
 }
 
+native function Damage(Actor instigator, int damage, vector hitlocation);
+
 defaultproperties
 {
-
+	bloodCloud1=ParticleSystem'T_FX_UT3.Effects.P_FX_Bloodhit_01_Near'
 }

@@ -567,6 +567,7 @@ inline FLOAT appPow( FLOAT A, FLOAT B ) { return powf(A,B); }
 inline UBOOL appIsNaN( FLOAT A ) { return _isnan(A) != 0; }
 inline UBOOL appIsFinite( FLOAT A ) { return _finite(A); }
 inline INT appRand() { return rand(); }
+inline INT appRandRange(int Min, int Max) { return Min + (appRand() % (Max - Min + 1)); }
 inline void appRandInit(INT Seed) { srand( Seed ); }
 inline void appSRandInit( INT Seed ) { GSRandSeed = Seed; }
 inline FLOAT appFractional( FLOAT Value ) { return Value - appTruncFloat( Value ); }
